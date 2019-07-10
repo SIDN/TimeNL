@@ -1,0 +1,83 @@
+/* Comments in CSS are a terrible pain, see https://www.xanthir.com/b4U10
+ *  So please be aware!!!
+ */
+
+.jumbotron#customtron {
+    color: white;
+    background-color: #6f5499;
+    text-align: center;
+    width: 100%;
+}
+
+p#customtron1 {
+    font-size: 80px;
+    height: 80px;
+}
+
+p#customtron2 {
+    font-size: 30px;
+}
+
+#stratum2margin {
+    margin: 3%;
+}
+
+div.codeclass {
+    display: block;
+    background-color: black;
+    border: 1px solid yellow;
+    padding: 10px;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+}
+code {
+    color: yellow;
+}
+
+.clocklogo {
+    display: block;
+    color: #fff;
+    text-align: center;
+    border-radius: 15%;
+    margin: 0 auto 0px;
+}
+.clocklogo-outline {
+    background-color: transparent;
+    border: 1px solid #cdbfe3;
+}
+.clocklogo-lg {
+    width: 109px;
+    height: 110px;
+    font-size: 109px;
+    line-height: 0px;
+}
+
+
+a:link
+{
+    color:#000080;
+}
+
+a:visited
+{
+    color:#000080;
+}
+
+a:hover
+{
+    color:#0000b0;
+}
+
+img#flagribbon {
+    position: absolute;
+    /* top: 0; */
+    right: 0;
+    /* border: 0; */
+    //width: 175px; 
+}
+//@media only screen and (max-width: 48em) {
+//  img#flagribbon {width : 100px;}
+//}
