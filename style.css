@@ -22,6 +22,10 @@ p#customtron2 {
     margin: 3%;
 }
 
+ul#bulletless {
+ list-style-type: none;
+}
+
 div.codeclass {
     display: block;
     background-color: black;
