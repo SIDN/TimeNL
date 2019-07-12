@@ -127,6 +127,37 @@
             </div>
           </div>
           <br><br>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#routers"><strong>Cisco IOS/NX-OS</strong> en/of <strong>Juniper JunOS</strong> instellen</button>
+          <div id="routers" class="collapse">
+            <div class="alert alert-dark">
+              <p class="text-justify">Cisco IOS and NX-OS:</p>
+              <div class="codeclass">
+                <code>
+                router# config t<br>
+                Enter configuration commands, one per line.  End with CNTL/Z.<br>
+                router(config)# no ntp server<br>
+                router(config)# ntp server ntp.time.nl prefer<br>
+                router(config)# copy running-config startup-config<br>
+                </code>
+              </div>
+              <p class="text-justify">In het voorbeeld hierboven is het aan te bevelen om, naast ntp.time.nl, nog ekele andere betrouwbare stratum 1 servers op te nemen (zonder de 'prefer'-toevoeging).</p>
+              <p class="text-justify">Juniper Junos:</p>
+              <div class="codeclass">
+                <code>
+                system {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;ntp {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server ntp.time.nl prefer;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                }<br>
+                </code>
+              </div>  
+              <p class="text-justify">In het voorbeeld hierboven is het aan te bevelen om, naast ntp.time.nl, nog ekele andere betrouwbare stratum 1 servers op te nemen (zonder de 'prefer'-toevoeging).</p>  
+              <div class="alert alert-warning" role="alert">
+                <strong>Let op: </strong>Gebruik alleen de naam ('ntp.time.nl') en niet het bijbehorende IP adres bij je instellingen, want we behouden ons het recht voor dat IP adres in de toekomst zonder aankondiging te veranderen.
+              </div>
+            </div>
+          </div>
+          <br><br>          
           <ul class="pagination">
             <li class="page-item"><a class="page-link" href="#home"><i class="fas fa-arrow-up"></i> naar boven</a></li>
           </ul>
