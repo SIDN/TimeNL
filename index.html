@@ -230,7 +230,16 @@
                 <br>
                 De gele pijlen duiden op een directe koppeling met een referentieklok. Onze stratum 1 server heeft dat. De rode pijlen duiden op een netwerkverbinding (over het internet) met 'bovenliggende' servers. Bijvoorbeeld uw stratum 2 of 3 server(s), die hun tijd ophalen bij (onder andere) onze TimeNL stratum 1 server(s).<br>
                 <br>
-                Verder raden we je aan om je te abonneren op onze <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailinglijst</a>, zodat je altijd op de hoogte bent als er ontwikkelingen zijn.
+                Verder raden we je aan om je te abonneren op onze <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailinglijst</a>, zodat je altijd op de hoogte bent als er ontwikkelingen zijn.<br>
+                <br>
+                Het is doorgaans een goed idee om niet te vertrouwen op een enkele NTP-server voor tijdsynchronisatie. Totdat wij ons serverpark zullen uitbreiden, raden we je aan om meerdere NTP-servers van andere aanbieders in Nederland te configureren. Zoals bijvoorbeeld:
+                <ul>
+                <li><i class="fas fa-globe"></i> chime1.surfnet.nl</li>
+                <li><i class="fas fa-atom"></i> time1.esa.int</li>
+                <li><i class="fas fa-atom"></i> ntp.vsl.nl</li>
+                <li><i class="fas fa-globe"></i> ntp.ripe.net</li>
+              </ul>
+              Met symbolen geven we de vermoedelijke (primaire) referentieklok weer van deze systemen, dus <i class="fas fa-globe"></i> voor <a href="https://www.gsa.europa.eu/european-gnss/what-gnss">GNSS</a> (d.w.z. GPS en geen anderen voor zover ons bekend) en <i class="fas fa-atom"></i> voor atoomklok. Er zijn nog veel meer goede NTP-servers, zowel in Nederland als de ons omringende landen. Dus dit was slechts een suggestie.
               </p>
             </div>
             <div class="alert alert-warning" role="alert">
