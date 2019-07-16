@@ -53,11 +53,12 @@ li {
     font-family: "Milo Serif";
 }
 
-h1 {
+h1,h3 {
     font-family: "Milo Sans",sans-serif;
     font-weight: 700;
     line-height: 40px;
-    padding: 1ex 0
+    padding: 1ex 0;
+    color: #002154;
 }
 
 .alert {
