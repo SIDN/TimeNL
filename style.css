@@ -49,6 +49,10 @@ body {
     line-height: 1
 }
 
+li {
+    font-family: "Milo Serif";
+}
+
 h1 {
     font-family: "Milo Sans",sans-serif;
     font-weight: 700;
