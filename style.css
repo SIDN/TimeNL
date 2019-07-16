@@ -1,7 +1,66 @@
 /* Comments in CSS are a terrible pain, see https://www.xanthir.com/b4U10
  * So please be aware!!!
  */
+ 
 
+@font-face {
+    font-family: "Milo Serif";
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/MiloSerifWeb-Bold.woff) format("woff")
+}
+
+@font-face {
+    font-family: "Milo Serif";
+    font-style: normal;
+    font-weight: 500;
+    src: url(../fonts/MiloSerifWeb-Medium.woff) format("woff")
+}
+
+@font-face {
+    font-display:swap;font-family: 'Milo Serif';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/../fonts/MiloSerifWeb.woff) format("woff")
+}
+
+@font-face {
+    font-display:swap;font-family: 'Milo Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(/../fonts/MiloWeb-Medium.woff) format("woff")
+}
+
+/* used or not? */
+@font-face {
+    font-display:swap;font-family: 'Milo Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/[USEDORNOT]/fonts/MiloWeb.woff) format("woff")
+}
+
+
+body {
+    background-color: #f5f5f5;
+    color: #464646;
+    font-family: "Milo Serif";
+    font-feature-settings: "kern" 1,"pnum" 1,"lnum" 1;
+    font-size: 18px;
+    line-height: 1
+}
+
+h1 {
+    font-family: "Milo Sans",sans-serif;
+    font-weight: 700;
+    line-height: 40px;
+    padding: 1ex 0
+}
+
+.alert {
+    font-family: "Milo Sans",sans-serif;
+    line-height: 1.4;
+}
+    
 .jumbotron#customtron {
     color: white;
     background-color: #6f5499;
@@ -16,6 +75,14 @@ p#customtron1 {
 
 p#customtron2 {
     font-size: 30px;
+    font-family: "Milo Sans",sans-serif;
+}
+
+p {
+    font-family: "Milo Serif",serif;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin: 0 0 1.5rem;
 }
 
 #stratum2margin {
@@ -59,20 +126,33 @@ code {
     line-height: 0px;
 }
 
-
-a:link
+.nav-link
 {
-    color:#000080;
+    color: #8c8c8c;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Milo Sans Medium',sans-serif;
 }
 
+a.page-link {
+    color: #30a8cb;
+}
+
+a:not([class]) {
+    border-bottom: 1px solid currentColor;
+    color: #30a8cb;
+}
+
+/*
 a:visited
 {
-    color:#000080;
+    text-decoration: underline
 }
+*/
 
-a:hover
-{
-    color:#0000b0;
+a:hover {
+    color: #002154;
+    text-decoration: none;
 }
 
 img#flagribbon {
