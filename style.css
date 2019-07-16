@@ -31,14 +31,14 @@
     src: url(/../fonts/MiloWeb-Medium.woff) format("woff")
 }
 
-/* used or not? */
+/*
 @font-face {
     font-display:swap;font-family: 'Milo Sans';
     font-style: normal;
     font-weight: 400;
     src: url(/[USEDORNOT]/fonts/MiloWeb.woff) format("woff")
 }
-
+*/
 
 body {
     background-color: #f5f5f5;
