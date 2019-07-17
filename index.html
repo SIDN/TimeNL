@@ -194,7 +194,7 @@
           <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqdisclaimer"><strong>Vraag:</strong> En wat staat er in 'de kleine lettertjes'?</button>
           <div id="faqdisclaimer" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Antwoord:</strong> Eigenlijk niks bijzonders. Bij de vraag over service levels, vertellen we je wel het e.e.a. over wat je van ons mag verwachten. Dus kijk daar maar even. Tja, en verder... Zie hieronder:<br>
+              <p class="text-justify"><strong>Antwoord:</strong> Eigenlijk niks bijzonders. Bij de <a href="#slaquestion">vraag over service levels</a>, vertellen we je wel het e.e.a. over wat je van ons mag verwachten en als je een leverancier bent van producten waar je een NTP-server in hebt opgenomen, kijk dan ook even bij <a href="#vendorquestion">het antoword op de vraag daarover</a>. Dus kijk daar maar even. Tja, en verder... Zie hieronder:<br>
                 <br>
                 <strong>Disclaimer</strong><br>
                 Ondanks dat we onze (experimentele) diensten met de grootste zorgvuldigheid ontwikkelen, garanderen we niet dat deze dienst (foutloos) werkt. Gebruik van deze dienst is geheel voor eigen risico. SIDN (Labs) is niet aansprakelijk voor eventuele schade die geleden wordt als gevolg van het gebruik, of niet kunnen gebruiken, van haar (experimentele) diensten en we behouden ons het recht voor om deze diensten op ieder gewenst moment, zonder voorafgaande mededeling, te beëindigen. 
@@ -239,25 +239,20 @@
                 <li><i class="fas fa-atom"></i> ntp.vsl.nl</li>
                 <li><i class="fas fa-globe"></i> ntp.ripe.net</li>
               </ul>
+              <p>
               Met symbolen geven we de vermoedelijke (primaire) referentieklok weer van deze systemen, dus <i class="fas fa-globe"></i> voor <a href="https://www.gsa.europa.eu/european-gnss/what-gnss">GNSS</a> (d.w.z. GPS en geen anderen voor zover ons bekend) en <i class="fas fa-atom"></i> voor atoomklok. Er zijn nog veel meer goede NTP-servers, zowel in Nederland als de ons omringende landen. Dus dit was slechts een suggestie.
+            </p>
             </div>
             <div class="alert alert-warning" role="alert">
               <strong>Let op: </strong>Gebruik alleen de naam ('ntp.time.nl') en niet het bijbehorende IP adres bij je instellingen, want we behouden ons het recht voor dat IP adres in de toekomst zonder aankondiging te veranderen.
             </div>
           </div>
           <br><br>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqstratum2"><strong>Vraag:</strong> Hoe gebruik ik TimeNL als hardwareleverancier?</button>
-          <div id="faqstratum2" class="collapse">
+          <button class="btn btn-dark" type="button" data-toggle="collapse" id="vendorquestion" data-target="#faqvendor"><strong>Vraag:</strong> Hoe gebruik ik TimeNL als hardwareleverancier?</button>
+          <div id="faqvendor" class="collapse">
             <div class="alert alert-dark">
               <p class="text-justify">
-                <img class="img-fluid float-right" src="img/NTP_stratum.png" id="stratum2margin" alt="NTP stratum" width="300px">
-                <strong>Antwoord:</strong> Het is in strijd met onze gebruikersvoorwaarden om 'ntp.time.nl' hard te coderen in bijvoorbeeld firmware van jouw producten, wanneer deze op grote schaal in de markt worden gezet.<br>
-                <br>
-                Als je iets dergelijks zou willen, neem dan contact met ons op.<br>
-                <br>
-                We hanteren hier namelijk hetzelfde beleid als het <a href="https://www.ntppool.org/nl/vendors.html">NTP-pool project</a>. D.w.z. dat we voor jow toepassing een speciale naam reserveren ('ntp.merknaam.time.nl'), zodat we beter kunnen anticiperen op het <a href="https://en.wikipedia.org/wiki/NTP_server_misuse_and_abuse">risico van capaciteitsoverschrijdingen</a>.<br>
-                <br>
-                Verder raden we je aan om je te abonneren op onze <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailinglijst</a>, zodat je altijd op de hoogte bent als er ontwikkelingen zijn.
+                <strong>Antwoord:</strong> Het is in strijd met onze gebruikersvoorwaarden om 'ntp.time.nl' hard te coderen in bijvoorbeeld firmware van jouw producten, wanneer deze op grote schaal in de markt worden gezet. Als je iets dergelijks zou willen, neem dan contact met ons op. We hanteren hier namelijk hetzelfde beleid als het <a href="https://www.ntppool.org/nl/vendors.html">NTP-pool project</a>. D.w.z. dat we voor jouw toepassing een speciale naam reserveren ('ntp.merknaam.time.nl') en je wensen samen doorspreken, zodat we beter kunnen anticiperen op het mogelijke <a href="https://en.wikipedia.org/wiki/NTP_server_misuse_and_abuse">risico van capaciteitsoverschrijdingen</a>. Verder raden we je aan om je te abonneren op onze <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailinglijst</a>, zodat je altijd op de hoogte bent als er ontwikkelingen zijn.
               </p>
             </div>
             <div class="alert alert-warning" role="alert">
@@ -302,22 +297,20 @@
               </ul>
             </div>
           </div>
-          <br><br>
-          <!-- requires more thinking... Thank you #dns.nl ;-)                                   
+          <br><br>                                
           <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#dnssec"><strong>Vraag:</strong> Welke rol speelt DNSSEC??</button>
           <div id="dnssec" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Antwoord:</strong> De domeinnaam 'time.nl', waaronder we deze dienst aanbieden, hebben we beveiligd middels <a href="https://www.sidn.nl/veilig-internet/dnssec">DNSSEC</a>. Wanneer jouw systeem dit ondersteunt, kun je erop vertrouwen dat je niet naar het verkeerde IP-adres wordt gestuurd als je naar 'ntp.time.nl' wil gaan. Voor de goede werking van DNSSEC is de juiste tijd trouwens belangrijk. In sommige situaties levert dat een <a href="https://tools.ietf.org/html/draft-mglt-dnsop-dnssec-validator-requirements">kip/ei probleem</a> op, bijvoorbeeld wanneer systemen zonder 'embedded' Real Time Clock (RTC) opstarten, nog geen besef hebben van de tijd (ze denken dat het 1-1-1970 is), maar toch DNSSEC-validatie willen doen om het IP-adres van 'ntp.time.nl' te vinden (wat dan vervolgens niet lukt). Hiervoor zijn reeds <a href="https://marc.info/?l=openbsd-tech&m=156102757301757&w=2">oplossingen</a> bedacht. Maar wij kunnen je hier ook mee helpen via 'bootstrap.timeserver.nl'. Dat is een domeinnaam die we bewust niet hebben beveiligd middels DNSSEC. Je kunt deze gebruiken tijdens het bootproces, bijvoorbeeld door tijdens het booten eenmalig <samp>ntpdate -b bootstrap.timeserver.nl</samp> aan te roepen, via een opstartscript. In sommige systemen is dit gedrag al standaard aanwezig en hoeft 'bootstrap.timeserver.nl' alleen nog maar te worden toegevoegd aan de configuratie (bij Linux bijvoorbeeld <samp>/etc/default/ntpdate</samp> in combinatie met bijvoorbeeld <samp>/etc/network/if-up.d/ntpdate</samp>).
+              <p class="text-justify"><strong>Antwoord:</strong> De domeinnaam 'time.nl', waaronder we deze dienst aanbieden, hebben we beveiligd middels <a href="https://www.sidn.nl/veilig-internet/dnssec">DNSSEC</a>. Wanneer jouw systeem dit ondersteunt, kun je erop vertrouwen dat je niet naar het verkeerde IP-adres wordt gestuurd als je naar 'ntp.time.nl' wil gaan. Voor de goede werking van DNSSEC is de juiste tijd trouwens belangrijk. In sommige situaties levert dat een <a href="https://tools.ietf.org/html/draft-mglt-dnsop-dnssec-validator-requirements">kip/ei probleem</a> op, bijvoorbeeld wanneer systemen zonder 'embedded' Real Time Clock (RTC) opstarten, nog geen besef hebben van de tijd (ze denken dat het 1-1-1970 is), maar toch DNSSEC-validatie willen doen om het IP-adres van 'ntp.time.nl' te vinden (wat dan vervolgens niet lukt). Hiervoor zijn reeds <a href="https://marc.info/?l=openbsd-tech&m=156102757301757&w=2">oplossingen</a> bedacht, al blijft het nog wel een punt van aandacht. Voor systemen die wel (ongeveer) al gelijklopen qua tijd, is dit geen probleem. 
               </p>
             </div>
           </div>
           <br><br>
-          -->
           <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#authntp"><strong>Vraag:</strong> Leveren jullie ook 'authenticated NTP?</button>
           <div id="authntp" class="collapse">
             <div class="alert alert-dark">
               <p class="text-justify"><strong>Antwoord:</strong> De standaard (gratis en anonieme) publieke dienst heeft dat niet. Maar authenticatie op basis van 'symmetric keys' behoort wel tot de mogelijkheden bij geregistreerde gebruikers. Laat het ons weten als je hier behoefte aan hebt en waarom. De beslissing of we je dit vervolgens kunnen aanbieden ligt bij ons, evenals de beslissing of we dit kostenloos doen of tegen een geringe vergoeding. We stellen wel wat eisen. Zo gebruiken we bijvoorbeeld geen
-                <a href='https://tools.ietf.org/html/rfc8573'>MD5 algoritme</a> voor onze keys. Ook '<a href="https://tools.ietf.org/html/rfc5906">autokey</a>' achten we onvoldoende veilig. Misschien heb je wel eens gehoord van het <a href='https://tools.ietf.org/html/draft-ietf-ntp-using-nts-for-ntp'>Network Time Security (NTS) protocol</a> en vraag je je af of wij dit al ondersteunen. Het antwoord is; nog niet, maar we volgen de ontwikkeling van deze standaard nauwlettend, dus hou de berichten hierover in de gaten. Bij een van de andere antwoorden in de FAQ lees je hoe wij met je communiceren.
+                <a href='https://tools.ietf.org/html/rfc8573'>MD5 algoritme</a> voor onze keys. Ook '<a href="https://tools.ietf.org/html/rfc5906">autokey</a>' achten we onvoldoende veilig. Gebruik je OpenNTPd, dan zijn zogenaamde '<a href="https://www.undeadly.org/cgi?action=article&sid=20150210103656">TLS constraints</a>' misschien nog wel een optie voor je. Misschien heb je wel eens gehoord van het <a href='https://tools.ietf.org/html/draft-ietf-ntp-using-nts-for-ntp'>Network Time Security (NTS) protocol</a> en vraag je je af of wij dit al ondersteunen. Het antwoord is; nog niet, maar we volgen de ontwikkeling van deze standaard nauwlettend, dus hou de berichten hierover in de gaten. Bij een van de andere antwoorden in de FAQ lees je hoe wij met je communiceren.
               </p>
             </div>
           </div>
@@ -325,7 +318,7 @@
           <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqnts"><strong>Vraag:</strong> Is er NTS ondersteuning?</button>
           <div id="faqnts" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Antwoord:</strong> <a href="https://tools.ietf.org/html/draft-ietf-ntp-using-nts-for-ntp">Network Time Security (NTS)</a> is een standaard in ontwikkeling. Op dit moment bieden we deze nog niet aan in onze productieomgeving. Maar we <a href="https://www.ietfjournal.org/a-new-security-mechanism-for-the-network-time-protocol/">volgen de ontwikkeling</a> van de standaard nauwgezet en het zou zomaar kunnen dat we een keer een pilot opzetten om van te leren. 
+              <p class="text-justify"><strong>Antwoord:</strong> <a href="https://tools.ietf.org/html/draft-ietf-ntp-using-nts-for-ntp">Network Time Security (NTS)</a> is een standaard in ontwikkeling. Op dit moment bieden we deze nog niet aan in onze productieomgeving. Maar we <a href="https://www.ietfjournal.org/a-new-security-mechanism-for-the-network-time-protocol/">volgen de ontwikkeling</a> van de standaard nauwgezet en het zou zomaar kunnen dat we een keer een pilot opzetten om van te leren. Hetzelfde geldt trouwens voor '<a href="https://tools.ietf.org/html/draft-roughtime-aancha">roughtime</a>', mocht je je dat afvragen.
               </p>
             </div>
           </div>
