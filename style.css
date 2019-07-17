@@ -5,6 +5,7 @@
 
 @font-face {
     font-family: "Milo Serif";
+    font-display: auto;
     font-style: normal;
     font-weight: 700;
     src: url(../fonts/MiloSerifWeb-Bold.woff) format("woff")
@@ -12,6 +13,7 @@
 
 @font-face {
     font-family: "Milo Serif";
+    font-display: auto;
     font-style: normal;
     font-weight: 500;
     src: url(../fonts/MiloSerifWeb-Medium.woff) format("woff")
@@ -19,6 +21,7 @@
 
 @font-face {
     font-display:swap;font-family: 'Milo Serif';
+    font-display: auto;
     font-style: normal;
     font-weight: 400;
     src: url(/../fonts/MiloSerifWeb.woff) format("woff")
@@ -26,6 +29,7 @@
 
 @font-face {
     font-display:swap;font-family: 'Milo Sans';
+    font-display: auto;
     font-style: normal;
     font-weight: 500;
     src: url(/../fonts/MiloWeb-Medium.woff) format("woff")
@@ -34,6 +38,7 @@
 /*
 @font-face {
     font-display:swap;font-family: 'Milo Sans';
+    font-display: auto;
     font-style: normal;
     font-weight: 400;
     src: url(/[USEDORNOT]/fonts/MiloWeb.woff) format("woff")
