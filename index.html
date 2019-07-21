@@ -25,11 +25,14 @@
     <a id="home"></a>
     <nav class="navbar navbar-expand-sm bg-light">
       <a class="navbar-brand" href="#"><span class="far fa-clock"></span></a>
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a  class= "nav-link" href="#howto">Instellen</a></li>
         <li class="nav-item"><a  class= "nav-link" href="#FAQ">Veelgestelde vragen</a></li>
         <li class="nav-item"><a  class= "nav-link" href="#backgroundinfo">Achtergrondinformatie</a></li>
         <li class="nav-item"><a  class= "nav-link" href="#opstat">Operationele Status</a></li>
+      </ul>
+      <ul class="nav navbar-nav my-2 my-lg-0">
+        <li class="nav-item"><a class= "nav-link" href="index_en.html">🇬🇧 EN</a></li>
       </ul>
     </nav>
     <div class="jumbotron" id="customtron">
@@ -226,7 +229,7 @@
                 <img class="img-fluid float-right" src="img/NTP_stratum.png" id="stratum2margin" alt="NTP stratum" width="300">
                 <strong>Antwoord:</strong> Dit ligt ondermeer aan de bedrijfsgrootte. Je kunt al jouw gebruikers laten communiceren met onze NTP-server. Maar bij grotere aantallen gebruikers kan het zinvol zijn om een eigen, interne NTP-server te configureren en daar de gebruikers hun tijd mee te laten synchroniseren. Dit noemen we een zogenaamde stratum 2 server. Deze kan op zijn beurt de tijd weer synchroniseren aan (o.a.) onze stratum 1 server. Op die manier wordt onze server minder zwaar belast en hoef jij jouw eventuele firewall niet voor elke gebruiker open te zetten. Bij nog grotere omgevingen, kan dit zelfs verder worden uitbreid naar stratum 3.<br>
                 <br>
-                In de afbeelding hiernaast wordt dit weergegeven.<br>
+                In de afbeelding wordt dit weergegeven.<br>
                 <br>
                 De gele pijlen duiden op een directe koppeling met een referentieklok. Onze stratum 1 server heeft dat. De rode pijlen duiden op een netwerkverbinding (over het internet) met 'bovenliggende' servers. Bijvoorbeeld uw stratum 2 of 3 server(s), die hun tijd ophalen bij (onder andere) onze TimeNL stratum 1 server(s).<br>
                 <br>
@@ -298,7 +301,7 @@
             </div>
           </div>
           <br><br>                                
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#dnssec"><strong>Vraag:</strong> Welke rol speelt DNSSEC??</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#dnssec"><strong>Vraag:</strong> Welke rol speelt DNSSEC?</button>
           <div id="dnssec" class="collapse">
             <div class="alert alert-dark">
               <p class="text-justify"><strong>Antwoord:</strong> De domeinnaam 'time.nl', waaronder we deze dienst aanbieden, hebben we beveiligd middels <a href="https://www.sidn.nl/veilig-internet/dnssec">DNSSEC</a>. Wanneer jouw systeem dit ondersteunt, kun je erop vertrouwen dat je niet naar het verkeerde IP-adres wordt gestuurd als je naar 'ntp.time.nl' wil gaan. Voor de goede werking van DNSSEC is de juiste tijd trouwens belangrijk. In sommige situaties levert dat een <a href="https://tools.ietf.org/html/draft-mglt-dnsop-dnssec-validator-requirements">kip/ei probleem</a> op, bijvoorbeeld wanneer systemen zonder 'embedded' Real Time Clock (RTC) opstarten, nog geen besef hebben van de tijd (ze denken dat het 1-1-1970 is), maar toch DNSSEC-validatie willen doen om het IP-adres van 'ntp.time.nl' te vinden (wat dan vervolgens niet lukt). Hiervoor zijn reeds <a href="https://marc.info/?l=openbsd-tech&m=156102757301757&w=2">oplossingen</a> bedacht, al blijft het nog wel een punt van aandacht. Voor systemen die wel (ongeveer) al gelijklopen qua tijd, is dit geen probleem. 
