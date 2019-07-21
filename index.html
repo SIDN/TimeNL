@@ -112,7 +112,7 @@
                 server ntp.time.nl iburst key 1<br>
                 </code>
               </div>
-              <p class="text-justify">Onder Unix/Linux/BSD/etc. zijn verschillende NTP-pakketten beschikbaar, zoals <a href="http://www.ntp.org/downloads.html">NTP</a>, <a href="https://ntpsec.org/">NTPsec</a>, <a href="https://chrony.tuxfamily.org/doc/3.5/chrony.conf.html">Chrony</a>, <a href="http://www.openntpd.org/manual.html">OpenNTPD</a>, enz. Meestal hebben ze een <samp>ntp.conf</samp> bestand (soms ook wel <samp>ntpd.conf</samp> genaamd) om de NTP-server in te configureren. Een voorbeeldje hiervan staat hierboven, maar raadpleeg ook de documentatie van het betreffende pakket, want in detail kunnen er verschillen zijn. Zo werkt <a href="https://help.ubuntu.com/lts/serverguide/NTP.html">Ubuntu standaard met timesyncd</a>, die soms in de weg zit als een ander NTP-pakket gewenst is, maar dit oplossen is simpel. Kort gezegd komt dit neer op; <samp>/etc/systemd/timesyncd.conf</samp> aanpassen. Zie <samp>man timesyncd.conf</samp>. Er is over dit alles veel informatie vinden op internet. En bij OpenNTPD wordt <samp>weight</samp> gebruikt in plaats van <samp>prefer</samp>.</p>
+              <p class="text-justify">Onder Unix/Linux/BSD/etc. zijn verschillende NTP-pakketten beschikbaar, zoals <a href="http://www.ntp.org/downloads.html">NTP</a>, <a href="https://ntpsec.org/">NTPsec</a>, <a href="https://chrony.tuxfamily.org/doc/3.5/chrony.conf.html">Chrony</a>, <a href="http://www.openntpd.org/manual.html">OpenNTPD</a>, enz. Meestal hebben ze een <samp>ntp.conf</samp> bestand (soms ook wel <samp>ntpd.conf</samp> genaamd) om de NTP-server in te configureren. Een voorbeeldje hiervan staat hierboven, maar raadpleeg ook de documentatie van het betreffende pakket, want in detail kunnen er verschillen zijn. Zo werkt <a href="https://help.ubuntu.com/lts/serverguide/NTP.html">Ubuntu standaard met timesyncd</a>, die soms in de weg zit als een ander NTP-pakket gewenst is. Maar, wil je geen ander NTP-pakket, dan is aanpassen van timesyncd simpel. Kort gezegd komt dit neer op; <samp>/etc/systemd/timesyncd.conf</samp> aanpassen. Zie <samp>man timesyncd.conf</samp>. Er is over dit alles veel informatie vinden op internet. En bij OpenNTPD wordt <samp>weight</samp> gebruikt in plaats van <samp>prefer</samp>.</p>
               <p class="text-justify">Een andere optie is om niet met een daemon te werken, maar om vanuit CRON met enige regelmaat je server te synchroniseren. In het voorbeeld hieronder gebeurt dit wekelijks (op een vrij willekeurige tijd, dus niet bij minuut '0', om overbelastingspieken te vermijden), maar vaker mag natuurlijk ook. Doe het echter niet vaker dan 1 x per uur (en niet op het hele uur, maar ergens willekeurig).</p>
               <div class="codeclass">
                 <code>
@@ -232,7 +232,7 @@
                 <br>
                 Verder raden we je aan om je te abonneren op onze <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailinglijst</a>, zodat je altijd op de hoogte bent als er ontwikkelingen zijn.<br>
                 <br>
-                Het is doorgaans een goed idee om niet te vertrouwen op een enkele NTP-server voor tijdsynchronisatie. Totdat wij ons serverpark zullen uitbreiden, raden we je aan om meerdere NTP-servers van andere aanbieders in Nederland te configureren. Zoals bijvoorbeeld (maar niet uitsluitend):
+                Het is doorgaans een goed idee om <a href="https://tools.ietf.org/html/rfc8633#section-3.2">niet te vertrouwen op een enkele NTP-server</a> voor tijdsynchronisatie. Totdat wij ons serverpark zullen uitbreiden, raden we je aan om meerdere NTP-servers van andere aanbieders in Nederland te configureren. Zoals bijvoorbeeld (maar niet uitsluitend):
               <ul>
                 <li><i class="fas fa-globe"></i> chime1.surfnet.nl</li>
                 <li><i class="fas fa-atom"></i> time1.esa.int</li>
@@ -240,7 +240,7 @@
                 <li><i class="fas fa-globe"></i> ntp.ripe.net</li>
               </ul>
               <p>
-              Met symbolen geven we de vermoedelijke (primaire) referentieklok weer van deze systemen, dus <i class="fas fa-globe"></i> voor <a href="https://www.gsa.europa.eu/european-gnss/what-gnss">GNSS</a> (d.w.z. GPS en geen anderen voor zover ons bekend) en <i class="fas fa-atom"></i> voor atoomklok. Er zijn nog veel meer goede NTP-servers, zowel in Nederland als de ons omringende landen. Dus dit was slechts een suggestie.
+              Met symbolen geven we de vermoedelijke (primaire) referentieklok weer van deze systemen, dus <i class="fas fa-globe"></i> voor <a href="https://www.gsa.europa.eu/european-gnss/what-gnss">GNSS</a> (d.w.z. GPS en geen anderen voor zover ons bekend) en <i class="fas fa-atom"></i> voor atoomklok. Er zijn nog veel meer goede NTP-servers, zowel in Nederland als de ons <a href="https://www.bipm.org/utils/en/pdf/time_ann_rep/Time_annual_report_2017/23_timeservices_TAR17.pdf">omringende landen</a>. Dus dit was slechts een suggestie.
             </p>
             </div>
             <div class="alert alert-warning" role="alert">
@@ -355,7 +355,8 @@
             <li class="page-item"><a class="page-link" href="#home"><i class="fas fa-arrow-up"></i> naar boven</a></li>
           </ul>
           <h3><a id="opstat"></a>Operationele status</h3>
-          <div class="alert alert-info">
+          <div class="alert alert-dismissible alert-info">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong>2019-07-11 01:00 (UTC)</strong><br>
             'Galileo service degraded' - geen impact voor TimeNL.<br>
             <a href="https://www.gsc-europa.eu/notice-advisory-to-galileo-users-nagu-2019025">NOTICE ADVISORY TO GALILEO USERS (NAGU) 2019025</a><br>
