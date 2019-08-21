@@ -53,68 +53,68 @@
           <!--
             <div class="alert alert-success alert-dismissible" role="alert">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <strong>News</strong><br>We will communicate important updates about the service through these types of frameworks. No updates at this time.
+              <strong>News</strong><br>Whenever we have important news about the service, we'll make it available here. No updates are available at the moment.
             </div>
             -->
           <h1><a id="start"></a>TimeNL</h1>
           <p class="text-justify">
-            Is a Dutch internet time service, based on <a target="_blank" href="https://en.wikipedia.org/wiki/Network_Time_Protocol">NTP</a> (and PTP on request). This is an initiative of <a target="_blank" href="https://www.sidnlabs.nl/en">SIDN Labs</a>.<!-- TODO in conjunction with other parties --> On this website we explain this stratum 1 NTP service and invite you to use it!
+            Is a Dutch internet time service, based on <a target="_blank" href="https://en.wikipedia.org/wiki/Network_Time_Protocol">NTP</a> (and PTP by arrangement). It's an initiative by <a target="_blank" href="https://www.sidnlabs.nl/en">SIDN Labs</a>.<!-- TODO in conjunction with other parties --> This website gives full details of the stratum 1 NTP service, which you are warmly invited to use.
           </p>
           <p class="text-justify">
-            The <a href='https://en.wikipedia.org/wiki/Network_Time_Protocol'>Network Time Protocol</a> (NTP) ensures that computers on the internet can synchronize their system clocks, so that they are always right down to the millisecond. Stable and accurate time is essential for the proper functioning of all kinds of applications. Accurate time is crucial for determining the order in which events occur and is a fundamental aspect of transaction integrity, logging / audit, troubleshooting and forensic investigations.
+            The <a href='https://en.wikipedia.org/wiki/Network_Time_Protocol'>Network Time Protocol</a> (NTP) enables internet-connected computers to synchronise their system clocks, so that they are always accurate to within a millisecond. Stable and accurate timing is vital for all kinds of applications to function properly. Precise timing is needed to decide what order a series of events happened in, for example. It's also a fundamental aspect of transaction integrity, logging, auditing, troubleshooting and forensic research.
           </p>
           <div class="alert alert-info" role="alert">
-            <strong>Did you know...</strong><br>NTP is a recommended standard for authorities in the Netherlands, according to the <a href="https://www.forumstandaardisatie.nl/standaard/ntp">Dutch comply-or-explain list</a>? Our NTP service meets all the conditions set there.
+            <strong>Did you know...</strong><br>NTP is on the Dutch <a href="https://www.forumstandaardisatie.nl/standaard/ntp">comply-or-explain list</a>, meaning that government agencies in the Netherlands are required to support it unless they have a good reason not to. Our NTP service satisfies all the requirements for governmental use.
           </div>
           <p class="text-justify">
-            The experts from <a href='https://www.sidnlabs.nl/en'>SIDN Labs</a> have set up this reliable NTP service and we offer it for free, free to use by everyone. On this website we tell you everything about it and we explain how you can make optimum use of TimeNL.
+            TimeNL has been set up by experts at <a href='https://www.sidnlabs.nl/en'>SIDN Labs</a>. It's available for anyone to use, free of charge. On this website, you'll find full details of the service, and advice on making the best possible use of it.
           </p>
           <ul class="pagination">
             <li class="page-item"><a class="page-link" href="#home"><i class="fas fa-arrow-up"></i> upwards</a></li>
           </ul>
-          <h3><a id="howto"></a>How do I set TimeNL?</h3>
-          <p> Select the system for which you want to set TimeNL below.</p>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#osx">Set up <strong>Apple OSX</strong></button>
+          <h3><a id="howto"></a>How do I set up my system to use TimeNL?</h3>
+          <p> Select the system you want to work with TimeNL:</p>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#osx">Setting up <strong>Apple OSX</strong></button>
           <div id="osx" class="collapse">
             <div class="alert alert-dark">
               <img class="img-fluid" src="img/instellingen_ntp_time_nl_apple.png" alt="Settings OSX"><!-- TODO: picture with english text for index_en.html -->
-              <p class="text-justify">You can specify multiple NTP servers here, separated by a comma. This can also be done on the command line through <samp>systemsetup -setnetworktimeserver "ntp.time.nl"</samp> (activate this via <samp>systemsetup -setusingnetworktime on</samp>). You can also include multiple NTP servers directly in the <samp>/private/etc/ntp.conf</samp> file.</p>
+              <p class="text-justify">On the screen above, you can specify multiple NTP servers, separated by commas. Alternatively, you can use the command line: enter <samp>systemsetup -setnetworktimeserver "ntp.time.nl"</samp> (then activate using <samp>systemsetup -setusingnetworktime on</samp>). Another option is to add multiple NTP servers directly to the <samp>/private/etc/ntp.conf</samp> file.</p>
               <div class="alert alert-warning" role="alert">
-                <strong>Note: </strong>only use the name ('ntp.time.nl') and not the corresponding IP address at your settings, because we reserve the right to change that IP address in the future without notice.
+                <strong>Note: </strong>in your settings, use only the name ('ntp.time.nl'), without the corresponding IP address, because we reserve the right to change the IP address in the future without notice.
               </div>
             </div>
           </div>
           <br><br>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#windows">Set up <strong>Microsoft Windows</strong></button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#windows">Setting up <strong>Microsoft Windows</strong></button>
           <div id="windows" class="collapse">
             <div class="alert alert-dark">
               <img class="img-fluid mx-auto d-block rounded" src="img/ntp-time-nl_windows1.jpg" alt="Settings Windows step 1"><br><br>
               <img class="img-fluid mx-auto d-block rounded" src="img/ntp-time-nl_windows2.jpg" alt="Settings Windows step 2"><br><br>
               <img class="img-fluid mx-auto d-block rounded" src="img/ntp-time-nl_windows3.jpg" alt="Settings Windows step 3"><br><br>
               <p class="text-justify">
-                The illustrations above explain the steps for a workstation. If you are a system administrator, take a look at <a href="https://docs.microsoft.com/en-us/windows-server/networking/windows-time-service/how-the-windows-time-service-works">Microsoft's explanation of the Windows Time Service</a>.
+                To set up an individual workstation, follow the steps illustrated above. If you are a system administrator, take a look at  <a href="https://docs.microsoft.com/en-us/windows-server/networking/windows-time-service/how-the-windows-time-service-works">Microsoft's explanation of the Windows Time Service</a>.
               </p>
               <div class="alert alert-warning" role="alert">
-                <strong>Note: </strong>only use the name ('ntp.time.nl') and not the corresponding IP address at your settings, because we reserve the right to change that IP address in the future without notice.
+                <strong>Note: </strong>in your settings, use only the name ('ntp.time.nl'), without the corresponding IP address, because we reserve the right to change the IP address in the future without notice.
               </div>
             </div>
           </div>
           <br><br>          
           <!-- TODO Linux desktop, maybe?? Any others?-->
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#unix">Set up<strong>Unix ntp.conf</strong></button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#unix">Setting up<strong>Unix ntp.conf</strong></button>
           <div id="unix" class="collapse">
             <div class="alert alert-dark">
               <div class="codeclass">
                 <code>
-                # Example 1: SIDN's ntp.time.nl (as prefered NTP server)<br>
+                # Example 1: SIDN's ntp.time.nl (as preferred NTP server)<br>
                 server ntp.time.nl iburst prefer<br>
                 <br>
-                # Example 2: SIDN's ntp.time.nl with authentication (not standard possible, but possible upon request)<br>
+                # Example 2: SIDN's ntp.time.nl with authentication (not supported by default, but available by arrangement)<br>
                 server ntp.time.nl iburst key 1<br>
                 </code>
               </div>
-              <p class="text-justify">Under Unix / Linux / BSD / etc. different NTP packages are available, such as <a href="http://www.ntp.org/downloads.html">NTP</a>, <a href="https://ntpsec.org/">NTPsec</a>, <a href="https://chrony.tuxfamily.org/doc/3.5/chrony.conf.html">Chrony</a>, <a href="http://www.openntpd.org/manual.html">OpenNTPD</a>, etc. Usually they have an <samp>ntp.conf</samp> file (sometimes also called <samp>ntpd.conf</samp>) to configure the NTP server. An example of this is given above, but also consult the documentation for the relevant package, because there may be differences in detail. For example, <a href="https://help.ubuntu.com/lts/serverguide/NTP.html">Ubuntu works with timesyncd</a>, which sometimes gets in the way when another NTP package is required. But, if you don't want another NTP package, adjusting timesyncd is simple. In short, this comes down to; edit <samp>/etc/systemd/timesyncd.conf</samp>. See <samp>man timesyncd.conf</samp>. There is a lot of information about this on the internet. And with OpenNTPD <samp>weight</samp> is used insted of <samp>prefer</samp>.</p>
-              <p class="text-justify">Another option is not to work with a daemon, but to synchronize your server with some regularity from CRON. In the example below, this happens weekly (at a fairly random time, not at minute '0', in order to avoid overload peaks), but more often of course is also allowed. Do not do it more than once per hour (and not on the hour, but somewhere randomly).</p>
+              <p class="text-justify">Various NTP packages are available for Unix/Linux/BSD etc, including <a href="http://www.ntp.org/downloads.html">NTP</a>, <a href="https://ntpsec.org/">NTPsec</a>, <a href="https://chrony.tuxfamily.org/doc/3.5/chrony.conf.html">Chrony</a> and <a href="http://www.openntpd.org/manual.html">OpenNTPD</a>. They usually have an <samp>ntp.conf</samp> file (also sometimes called <samp>ntpd.conf</samp>) for configuring the NTP server. See the example above, but consult the documentation for the relevant package as well, because there may be minor differences. For instance, <a href="https://help.ubuntu.com/lts/serverguide/NTP.html">Ubuntu works with timesyncd by default</a>, which sometimes gets in the way when you want to use another NTP package as well. However, if you don't want another NTP package, adjusting timesyncd is straightforward. It essentially involves editing <samp>/etc/systemd/timesyncd.conf</samp>. See <samp>man timesyncd.conf</samp>. Further information is easy to find on the internet. With OpenNTPD <samp>weight</samp> is used insted of <samp>prefer</samp>.</p>
+              <p class="text-justify">Another option is not to work with a daemon, but to periodically synchronise your server with CRON. In the example below, we have opted for weekly synchronisation (at a fairly random time, not at minute '0', in order to avoid overload peaks). However, you can of course synchronise more often if you wish. Do not synchronise more than once an hour, though, and not on the hour, but at a randomly chosen time.</p>
               <div class="codeclass">
                 <code>
                 # Update ntpdate every wednsesday at 4 minutes past 11:00 am<br>
@@ -123,12 +123,12 @@
                 </code>
               </div>
               <div class="alert alert-warning" role="alert">
-                <strong>Note: </strong>only use the name ('ntp.time.nl') and not the corresponding IP address at your settings, because we reserve the right to change that IP address in the future without notice.
+                <strong>Note: </strong>in your settings, use only the name ('ntp.time.nl'), without the corresponding IP address, because we reserve the right to change the IP address in the future without notice.
               </div>
             </div>
           </div>
           <br><br>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#routers"><strong>Cisco IOS/NX-OS</strong> en/of <strong>Juniper JunOS</strong> instellen</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#routers">Setting up <strong>Cisco IOS/NX-OS</strong> and/or <strong>Juniper JunOS</strong></button>
           <div id="routers" class="collapse">
             <div class="alert alert-dark">
               <p class="text-justify">Cisco IOS and NX-OS:</p>
@@ -141,7 +141,7 @@
                 router(config)# copy running-config startup-config<br>
                 </code>
               </div>
-              <p class="text-justify">In the example above, it is recommended to include a few other reliable stratum 1 servers in addition to ntp.time.nl (without the 'prefer' addition).</p>
+              <p class="text-justify">When following the example above, we recommend including a few other reliable stratum 1 servers in addition to ntp.time.nl (without the 'prefer' suffix).</p>
               <p class="text-justify">Juniper Junos:</p>
               <div class="codeclass">
                 <code>
@@ -152,9 +152,9 @@
                 }<br>
                 </code>
               </div>
-              <p class="text-justify">In the example above, it is advisable to include a few other reliable stratum 1 servers in addition to ntp.time.nl (without the 'prefer' addition).</p>
+              <p class="text-justify">When following the example above, we recommend including a few other reliable stratum 1 servers in addition to ntp.time.nl (without the 'prefer' suffix).</p>
               <div class="alert alert-warning" role="alert">
-                <strong>Note: </strong>only use the name ('ntp.time.nl') and not the corresponding IP address at your settings, because we reserve the right to change that IP address in the future without notice.
+                <strong>Note: </strong>in your settings, use only the name ('ntp.time.nl'), without the corresponding IP address, because we reserve the right to change the IP address in the future without notice.
               </div>
             </div>
           </div>
@@ -162,19 +162,19 @@
           <ul class="pagination">
             <li class="page-item"><a class="page-link" href="#home"><i class="fas fa-arrow-up"></i> upwards</a></li>
           </ul>
-          <h3><a id="FAQ"></a>Frequently Asked Questions</h3>
-          <p>Click on the question to expand the answer.</p>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#why"><strong>Question:</strong> Why does SIDN Labs do this?</button>
+          <h3><a id="FAQ"></a>FAQs</h3>
+          <p>Click on a question to open the answer.</p>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#why"><strong>Question:</strong> Why is SIDN Labs doing this?</button>
           <div id="why" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Answer:</strong> In short; because it fits in with our role.<br>
-                <a href="https://www.sidnlabs.nl/over-sidnlabs">SIDN Labs</a> is the research team of <a href="https://www.sidn.nl/thema/over-sidn">SIDN</a>. As a team we stand for the improvement and further security and innovation of the internet. We actively contribute to this. As the administrator of the .nl country domain, we have a reputation to uphold. We ensure that everyone, always, can reach the .nl domain names under our management on the basis of DNS (Domain Name System). We regard the worldwide availability of more than 5.8 million .nl domain names as a top priority that we take very seriously. That is why we have invested heavily in knowledge, expertise and a sound infrastructure. We have extensive experience with this so-called <a href="https://english.wrr.nl/publications/reports/2015/10/01/the-public-core-of-the-internet">'public core of the internet'</a>, which includes DNS. In our opinion, (public) NTP is also, in a sense, such an infrastructure service. And setting it up, maintaining it and making it available free of charge to the internet community is in line with our vision and really up our alley. We think that our experience and knowledge will be of great help in better putting the importance of NTP on the map. For that reason we make this service available free of charge and free of charge to everyone with the same passion and quality that you are used to from us for .nl and our other services.
+              <p class="text-justify"><strong>Answer:</strong> Because it fits in with our role.<br>
+                <a href="https://www.sidnlabs.nl/over-sidnlabs">SIDN Labs</a> is <a href="https://www.sidn.nl/thema/over-sidn">SIDN</a>'s research team. As a team, we are strong advocates of internet improvement, security and innovation. And we actively contribute to realisation of those goals. As the administrator of the .nl country-code domain, we have a reputation to uphold. We ensure that the .nl domain names under our control are always universally reachable via the DNS (Domain Name System). The worldwide availability of the 5.8 million-plus .nl domain names is our top priority. We have therefore invested heavily in knowledge, expertise and robust infrastructure. We have extensive experience with the so-called <a href="https://english.wrr.nl/publications/reports/2015/10/01/the-public-core-of-the-internet">'public core of the internet'</a>, which the DNS is part of. We believe that (public) NTP may also be regarded as an infrastructure service. Setting up and maintaining an NTP service, and making it available free of charge to the internet community, is in line with our vision and a good fit with our other activities. We think that our experience and knowledge can really help to highlight the importance of NTP. We are therefore making this service freely available to everyone, for the good of the community. It will be delivered with the drive and commitment to quality that you are used to with .nl and our other services.
               </p>
               <img class="img-fluid mx-auto d-block" src="img/wrr-rapport_english.png" alt="Report 'public core of the internet">
               <br>
               <div class="alert alert-info">
                 <strong>Dutch internet time service?</strong><br>
-                As a registry of the .nl country domain, we are naturally quite proud of TimeNL and regard that as the (albeit unofficial) 'Dutch internet time service', as you can find in <a href="https://www.npl.co.uk/products-services/time-frequency/internet-time">the United Kingdom</a>,<a href="https://ntp.net.nz/">New Zealand</a>, <a href="http://www.ntp.se/">Sweden</a>, <a href="https://betime.be/nl/">Belgium</a>, <a href="https://www.ptb.de/cms/ptb/fachabteilungen/abtq/gruppe-q4/ref-q42/zeitsynchronisation-von-rechnern-mit-hilfe-des-network-time-protocol-ntp.html">Germany</a> and <a href="https://www.nist.gov/pml/time-and-frequency-division/services/internet-time-service-its">the United States</a>.
+                As the registry for the .nl country-code domain, we are of course very proud of TimeNL. We regard it as the (albeit unofficial) 'Dutch internet time service', comparable to the national time services for the <a href="https://www.npl.co.uk/products-services/time-frequency/internet-time">the United Kingdom</a>,<a href="https://ntp.net.nz/">New Zealand</a>, <a href="http://www.ntp.se/">Sweden</a>, <a href="https://betime.be/nl/">Belgium</a>, <a href="https://www.ptb.de/cms/ptb/fachabteilungen/abtq/gruppe-q4/ref-q42/zeitsynchronisation-von-rechnern-mit-hilfe-des-network-time-protocol-ntp.html">Germany</a> and <a href="https://www.nist.gov/pml/time-and-frequency-division/services/internet-time-service-its">the United States</a>.
               </div>
             </div>
           </div>
@@ -183,55 +183,55 @@
           <div id="sla" class="collapse">
             <div class="alert alert-dark">
               <p class="text-justify"><strong>Answer:</strong> We have done our best to set up a reliable and reliable NTP service.</p>
-              <p class="text-justify">You can expect us to make an effort to offer and maintain a good quality NTP service. We invest in knowledge and expertise, in infrastructure, in safety, in modern versions of software, in support of new standards, in sufficient capacity and in quality monitoring. The basic service is free and available to everyone, both via IPv4 and IPv6. If you want more, for example 'authenticated NTP', then that is negotiable, but we can possibly ask for compensation for this. That choice is ours.</p>
-              <p class="text-justify">Of course we keep a finger on the pulse regarding abuse [*]. We will not tolerate that. We therefore reserve the right to deny you access to the service in whole or in part through filtering or rate limiting. We also do everything we can to prevent abuse, both technically and legally.</p>
-              <p class="text-justify">Furthermore, we accept no liability whatsoever for not being able to use our service (properly). You use TimeNL at your own risk and therefore also have your own responsibility. Therefore, make sure that you do not rely solely on our NTP service where necessary, but, for example, set up 2 third-party NTP services in your own stratum. If you have any questions, we are happy to advise you. Incidentally, it is quite possible that in time we will expand our capacity and offer several separate NTP servers that you can then rely on. We reserve the right to make changes to our service without prior notice. Of course, under normal circumstances we will communicate well in advance, via the <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailing list</a>, <a href="https://time.nl">this website</a> and/or via our <a href="https://twitter.com/sidnlabs">social media</a> channels.
+              <p class="text-justify">We have done our best to set up a sound and reliable NTP service. You can expect us to make every reasonable effort to offer and maintain a good quality NTP service. We invest in knowledge and expertise, infrastructure, security, up-to-date software, support for modern standards, capacity and quality monitoring. The basic service is freely available to everyone, both using IPv4 and using IPv6. Specialist services such as authenticated NTP are available by arrangement. However, we may choose to charge for such services.</p>
+              <p class="text-justify">Naturally, we keep an eye out for abuse,[*] which we are not prepared to tolerate. If you abuse the service, we may use filtering or rate limiting technology to restrict or block your access. We also do everything we can to prevent abuse by technical and legal means.</p>
+              <p class="text-justify">Furthermore, if you are unable to make (full) use of our service, we accept no liability for the consequences. You use TimeNL at your own risk, and you accept personal responsibility for your use of the service. We accordingly advise you not to rely solely on our NTP service. Where appropriate, for example, you should set up two third-party NTP services within your own stratum. If you have any questions, we are happy to give advice. In due course, we may expand our capacity and offer several separate NTP servers, so that the service becomes fully dependable. We reserve the right to make changes to our service without notice. Normally, however, we will announce changes well in advance, using the <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailing list</a>, <a href="https://time.nl">this website</a> and/or our <a href="https://twitter.com/sidnlabs">social media</a> channels.
               </p>
-              <p class="text-justify">[*] We apply a fair-use policy. The default settings of most NTP software ensure that you remain well within our margins. Under normal circumstances, your systems do not need to approach us more than once per 30 minutes or thereabouts. Of course it is no problem if you, by way of exception, want to temporarily deviate from this. But don't overdo it.
+              <p class="text-justify">[*] We operate a fair usage policy. The default settings in most NTP software will ensure that you remain well within the limits defined in that context. Under normal circumstances, your system should not need to approach us more than about once every half hour. Under non-standard circumstances, it's okay to query our server more often for a while. But don't overdo it.
               </p>
             </div>
           </div>
           <br><br>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqdisclaimer"><strong>Question:</strong> And what does the 'small print' say?</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqdisclaimer"><strong>Question:</strong> What's in the small print?</button>
           <div id="faqdisclaimer" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Answer:</strong> Nothing really special. With the <a href="#slaquestion">question about service levels</a> we will tell you what you can expect from us and if you are a supplier of products in which you have included an NTP server, then also take a look a <a href="#vendorquestion">the answer to the question about that</a>. Well, and further ... just this:<br>
+              <p class="text-justify"><strong>Answer:</strong> Nothing very special. Details of what you can expect from us are given in <a href="#slaquestion">answer about service levels</a>. If you supply products that incorporate an NTP server, you should take a look at the <a href="#vendorquestion">answer to the question about that</a> as well. The only other bit of small print is this:<br>
                 <br>
                 <strong>Disclaimer</strong><br>
-                Although we develop our (experimental) services with the greatest care, we do not guarantee that this service works (error-free). Use of this service is entirely at your own risk. SIDN (Labs) is not liable for any damage suffered as a result of the use or inability to use its (experimental) services and we reserve the right to terminate these services at any time without prior notice.
+                Although we take great care when developing our experimental services, we cannot guarantee that this service will always function properly. Use of the service is entirely at the user's risk. Neither SIDN nor SIDN Labs is liable for any damages suffered as a consequence of using (or being unable to use) any of its experimental or other services. We reserve the right to withdraw this service at any time, without notice.
               </p>
             </div>
           </div>
           <br><br>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqUSP"><strong>Question:</strong> What makes TimeNL special and how does it stand out?</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqUSP"><strong>Question:</strong> What makes TimeNL different from other services?</button>
           <div id="faqUSP" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Answer:</strong> Of course TimeNL is not the only NTP service available on the internet. Fortunately. There are quite a few alternatives. Yet there are a number of points on which we distinguish ourselves from others. We are happy to list them here for you: 
+              <p class="text-justify"><strong>Answer:</strong> Of course, TimeNL isn't the only NTP service available on the internet. Fortunately. There are quite a few alternatives. Nevertheless, there are a few things that distinguish our service from others: 
                 <br>
               <ul id="bulletless" class="text-justify">
-                <li><i class="fas fa-check"></i> Provided by <a href="https://www.sidn.nl/en/theme/about-sidn">SIDN</a>, the trusted company behind .nl. A stable organization with a lot of operational knowledge.</li>
-                <li><i class="fas fa-check"></i> From the Netherlands, for the Netherlands - developed with care and managed by driven, curious nerds (😉) who have an eye (and heart) for <a href="https://english.wrr.nl/publications/reports/2015/10/01/the-public-core-of-the-internet">'the public core of the internet'</a>. For more details, also take a look at the <a href="#backgroundinfo">'features and background information'</a> section and the answer to the question <a href="#slaquestion">'which service levels can I expect?'</a></li>
-                <li><i class="fas fa-check"></i> No 'big tech' company, but an accessible party that you can call or email with questions and that have an eye for your privacy.</li>
-                <li><i class="fas fa-check"></i>  Safer, because in certain cases 'authenticated NTP' is possible and time.nl is equipped with DNSSEC.</li>
-                <li><i class="fas fa-check"></i> Not only dependent on the American GPS system, but (among others) also linked to the <a href="https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)">European Galileo</a> and the <a href="https://en.wikipedia.org/wiki/DCF77">German DCF077</a> signal.</li>
-                <li><i class="fas fa-check"></i> Of course, in addition to IPv4, also accessible via IPv6.</li>
+                <li><i class="fas fa-check"></i> Provided by <a href="https://www.sidn.nl/en/theme/about-sidn">SIDN</a>, the trusted company behind .nl: a stable organisation with a lot of operational know-how.</li>
+                <li><i class="fas fa-check"></i> From the Netherlands, for the Netherlands - developed with care and managed by driven, curious nerds (😉) who care about <a href="https://english.wrr.nl/publications/reports/2015/10/01/the-public-core-of-the-internet">'the public core of the internet'</a>. For details, take a look at the <a href="#backgroundinfo">'Features and background information'</a> section and the answer to the question <a href="#slaquestion">'What service levels can I expect?'</a></li>
+                <li><i class="fas fa-check"></i> Not operated by a big tech company, but by an accessible service provider: an organisation you can call or e-mail with questions, and trust to respect your privacy.</li>
+                <li><i class="fas fa-check"></i> More secure, because authenticated NTP is available by arrangement, and time.nl is DNSSEC-enabled.</li>
+                <li><i class="fas fa-check"></i> Not dependent exclusively on the American GPS system: TimeNL also uses the <a href="https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)">European Galileo</a> and the <a href="https://en.wikipedia.org/wiki/DCF77">German DCF077</a> signal, for example</li>
+                <li><i class="fas fa-check"></i> Accessible using IPv4 and, of course, IPv6.</li>
               </ul>
               <img class="img-fluid mx-auto d-block" src="img/antennes-TimeNL.jpeg" alt="GNSS and DCF77 antennas on the roof of SIDN">
             </div>
           </div>
           <br><br>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqstratum2"><strong>Question:</strong> How do I use TimeNL within my company?</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqstratum2"><strong>Question:</strong> How can my company use TimeNL?</button>
           <div id="faqstratum2" class="collapse">
             <div class="alert alert-dark">
               <p class="text-justify">
                 <img class="img-fluid float-right" src="img/NTP_stratum.png" id="stratum2margin" alt="NTP stratum" width="300">
-                <strong>Answer:</strong> This is partly due to the company size. You can let all your users communicate with our NTP server. But with larger numbers of users, it can be useful to configure your own internal NTP server and let the users synchronize their time with it. We call this a so-called stratum 2 server. This can in turn synchronize the time with (among others) our stratum 1 server. That way our server is less burdened and you don't have to open your possible firewall for every user. In even larger environments, this can be extended even further to stratum 3. The figure shows how such a structure works.<br>
+                <strong>Answer:</strong> That depends partly on how big your company is. One option is for all your users to communicate with our NTP server independently. However, if you have a lot of users, it may be better to configure your own internal NTP server and let individual users synchronise their time with it. In a set-up like that, your server is called a stratum 2 server. A stratum 2 server gets its time from one or more stratum 1 servers, such as ours. The advantages are that there is less load on our server, and, if you use a firewall, you don't have to open it for every user. In a very large environment, a third stratum can be added, as illustrated.<br>
                 <br>
-                The yellow arrows indicate a direct link with a reference clock. Our stratum 1 server has those. The red arrows indicate a network connection (over the internet) with 'parent' servers. For example your stratum 2 or 3 server (s), which retrieve their time from (among others) our stratum 1 server (s).<br>
+                The yellow arrows indicate direct links to reference clocks. Our stratum 1 server has links to reference clocks. The red arrows indicate network (i.e. internet) connections to 'parent' servers. Those connections enable your stratum 2 or 3 server(s) to retrieve their time from stratum 1 servers, including ours.<br>
                 <br>
-                We also recommend that you subscribe to our <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailing list</a>, so that you are always informed when there are developments.<br>
+                We also advise joining our <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailing list</a>, so that you always get to hear about any developments.<br>
                 <br>
-                It is usually a good idea <a href="https://tools.ietf.org/html/rfc8633#section-3.2">not to rely on a single NTP server</a> for time synchronization. Until we have expanded our server park, we recommend that you configure multiple NTP servers from other providers in the Netherlands. Such as (but not exclusively):
+                It's usually a good idea <a href="https://tools.ietf.org/html/rfc8633#section-3.2">not to rely on a single NTP server</a> for time synchronization. Until we have expanded our server park, we recommend that you configure your system to use multiple NTP servers, including other Dutch servers. Here are some of the options:
               <ul>
                 <li><i class="fas fa-globe"></i> chime1.surfnet.nl</li>
                 <li><i class="fas fa-atom"></i> time1.esa.int</li>
@@ -239,32 +239,32 @@
                 <li><i class="fas fa-globe"></i> ntp.ripe.net</li>
               </ul>
               <p>
-                With symbols we indicate the probable (primary) reference clock of these systems, so <i class="fas fa-globe"></i> for <a href="https://www.gsa.europa.eu/european-gnss/what-gnss">GNSS</a> (ie GPS and no others as far as we know) and <i class="fas fa-atom"></i> for atomic clock. There are many more good NTP servers, both in the Netherlands and in the <a href="https://www.bipm.org/utils/en/pdf/time_ann_rep/Time_annual_report_2017/23_timeservices_TAR17.pdf">neighboring countries</a>. So this was just a suggestion.
+                The symbol next to each server indicates the type of (primary) reference clock the system is likely to use: <i class="fas fa-globe"></i> represents <a href="https://www.gsa.europa.eu/european-gnss/what-gnss">GNSS</a> (exclusively GPS, as far as we know) and <i class="fas fa-atom"></i> represents an atomic clock. There are many more good NTP servers, both in the Netherlands and in <a href="https://www.bipm.org/utils/en/pdf/time_ann_rep/Time_annual_report_2017/23_timeservices_TAR17.pdf">neighboring countries</a>. The ones listed above are only suggestions.
               </p>
               <div class="alert alert-warning" role="alert">
-                <strong>Note: </strong>only use the name ('ntp.time.nl') and not the corresponding IP address at your settings, because we reserve the right to change that IP address in the future without notice.
+                <strong>Note: </strong>in your settings, use only the name ('ntp.time.nl'), without the corresponding IP address, because we reserve the right to change the IP address in the future without notice.
               </div>
             </div>
           </div>
           <br><br>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" id="vendorquestion" data-target="#faqvendor"><strong>Question:</strong> How do I use  TimeNL as hardware supplier?</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" id="vendorquestion" data-target="#faqvendor"><strong>Question:</strong> Our company supplies hardware. How can we use TimeNL?</button>
           <div id="faqvendor" class="collapse">
             <div class="alert alert-dark">
               <p class="text-justify">
-                <strong>Answer:</strong> It is contrary to our terms of use to hard code 'ntp.time.nl' in, for example, firmware of your products, when these are marketed on a large scale. If you would like something similar, please contact us. We apply the same policy here as the <a href="https://www.ntppool.org/nl/vendors.html">NTP pool project</a>. Which means we reserve a special name for your application ('ntp.brandname.time.nl') and discuss your wishes together, so that we can better anticipate the potential <a href="https://en.wikipedia.org/wiki/NTP_server_misuse_and_abuse">risc of capacity overruns</a>. We also recommend that you subscribe to our <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailing list</a>, so that you are always informed when there are developments.
+                <strong>Answer:</strong> It's against our terms of use to hard code 'ntp.time.nl' into the firmware of products marketed on a large scale, for example. If you want to do anything like that, please contact us first. We follow the same policy as the <a href="https://www.ntppool.org/nl/vendors.html">NTP pool project</a>. Which means we reserve a special name for your application ('ntp.brandname.time.nl') and liaise with you about your needs, so that we can better anticipate the risk of <a href="https://en.wikipedia.org/wiki/NTP_server_misuse_and_abuse">capacity overruns</a>. We also advise joining our <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailing list</a>, so that you always get to hear about any developments.
               </p>
               <div class="alert alert-warning" role="alert">
-                <strong>Note: </strong>only use the agreed name (such as 'ntp.brandname.time.nl') and not the corresponding IP address at your settings, because we reserve the right to change that IP address in the future without notice.
+                <strong>Note: </strong>in your settings, use only the name ('ntp.brandname.time.nl'), without the corresponding IP address, because we reserve the right to change the IP address in the future without notice.
               </div>
             </div>
           </div>
           <br><br>                                          
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqlegal"><strong>Question:</strong> What are the (legal) requirements for time synchronisation?</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqlegal"><strong>Question:</strong> What are the legal and other requirements for time synchronisation?</button>
           <div id="faqlegal" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Answer:</strong> Provided; we are not lawyers. But we can report that NTP is a recommended standard on the so <a href="https://www.forumstandaardisatie.nl/standaard/ntp">comply-or-explain</a> list of the <a href="https://www.forumstandaardisatie.nl/open-standaarden">Standardisation Forum of the Dutch government</a>. That may mean that you have to ensure good NTP time synchronization in your network and our service can play an excellent role in that.<br>
+              <p class="text-justify"><strong>Answer:</strong> We should start by stressing that we aren't lawyers. But we can tell you that NTP is on the <a href="https://www.forumstandaardisatie.nl/standaard/ntp">comply-or-explain list</a> published by the Dutch government's <a href="https://www.forumstandaardisatie.nl/open-standaarden">Forum for Standardisation</a>. That may mean that you have to ensure effective NTP time synchronisation on your network, and our service can be very useful for that.<br>
                 <br>
-                At home and abroad, quality requirements that apply to time synchronization have been or are being considered. Requirements have also been formulated in a European context and by the Dutch Telecom Agency. See for example <a href="https://www.agentschaptelecom.nl/binaries/agentschap-telecom/documenten/publicaties/2018/juli/19/etsi-ip-handover-interface/2017-11-22+ETSI-IP.nl+v4.0.pdf">paragraph 4.15 of this document</a>. Naturally, with our NTP service you meet the requirements formulated there. You might also find <a href="https://www.agentschaptelecom.nl/binaries/agentschap-telecom/documenten/publicaties/2018/juli/19/transport-of-intercepted-ip-traffic/TIIT+V1.2.0.+2011-09.pdf">this document</a> interesting. Well and if you are the expert in this area; feel free to catch up with us, because we like to learn!
+                In the Netherlands and other countries, quality requirements have been or are being considered for time synchronisation. Requirements have also been made at the European level and by the Dutch Radiocommunications Agency. See, for example, <a href="https://www.agentschaptelecom.nl/binaries/agentschap-telecom/documenten/publicaties/2018/juli/19/etsi-ip-handover-interface/2017-11-22+ETSI-IP.nl+v4.0.pdf">paragraph 4.15 of this document</a>. . Those requirements can, of course, be met by using our NTP service. You may also find <a href="https://www.agentschaptelecom.nl/binaries/agentschap-telecom/documenten/publicaties/2018/juli/19/transport-of-intercepted-ip-traffic/TIIT+V1.2.0.+2011-09.pdf">this document</a> interesting. And, if you're actually an expert in this field, feel free to bring us up to speed with anything we might be missing. We're always eager to learn!
               </p>
             </div>
           </div>
@@ -272,15 +272,15 @@
           <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqgdpr"><strong>Question:</strong> What about my privacy and the GDPR?</button>
           <div id="faqgdpr" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Answer:</strong> We consider privacy and the <a href="https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/algemene-informatie-avg/algemene-informatie-avg">GDPR</a> of paramount importance. We do not store your data (= IP address) and do not use it for purposes other than for optimally maintaining this service. <a href="https://www.sidn.nl/en/about-sidn/privacy">Read more about how we handle your privacy</a>.
+              <p class="text-justify"><strong>Answer:</strong> We take privacy and the <a href="https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/algemene-informatie-avg/algemene-informatie-avg">GDPR</a> very seriously. We don't retain your personal data (IP address) and we don't use your data for anything other than maintaining and optimising this service <a href="https://www.sidn.nl/en/about-sidn/privacy">Read more about our privacy policy</a>.
               </p>
             </div>
           </div>
           <br><br>              
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqinform"><strong>Question:</strong> How do I stay informed?</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqinform"><strong>Question:</strong> How do I get news about TimeNL?</button>
           <div id="faqinform" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Answer:</strong> We inform you about this service via our <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailing list</a>, <a href="http://time.nl/indec_en.html">this website</a>, the <a href="https://www.sidnlabs.nl/en">SIDN Labs website</a>, <a href="https://twitter.com/sidnlabs">Twitter</a> and possibly also via <a href="https://www.sidn.nl/en">the SIDN corporate website</a>.
+              <p class="text-justify"><strong>Answer:</strong> We'll keep you informed about this service via our <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailing list</a>, <a href="http://time.nl/indec_en.html">this website</a>, the <a href="https://www.sidnlabs.nl/en">SIDN Labs website</a>, <a href="https://twitter.com/sidnlabs">Twitter</a> and sometimes also the<a href="https://www.sidn.nl/en">SIDN corporate website</a>.
               </p>
             </div>
           </div>
@@ -290,49 +290,49 @@
             <div class="alert alert-dark">
               <p class="text-justify"><strong>Answer:</strong></p>
               <ul>
-                <li><i class="fas fa-envelope"></i> Mail to timekeepers<i class="fas fa-at"></i>sidn.nl</li>
+                <li><i class="fas fa-envelope"></i> Mail timekeepers<i class="fas fa-at"></i>sidn.nl</li>
                 <li><i class="fas fa-mail-bulk"></i> Subscribe to <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailing list</a></li>
-                <li><i class="fas fa-user-secret"></i> Report security risks through our <a href="https://www.sidn.nl/en/internet-security/reporting-a-security-breach">responsible disclosure</a> arrangement</li>
+                <li><i class="fas fa-user-secret"></i> Report security issues by following our <a href="https://www.sidn.nl/en/internet-security/reporting-a-security-breach">responsible disclosure</a> guidelines</li>
               </ul>
             </div>
           </div>
           <br><br>                                
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#dnssec"><strong>Question:</strong> What role does DNSSEC play?</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#dnssec"><strong>Question:</strong> What's the score with DNSSEC?</button>
           <div id="dnssec" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Answer:</strong> We have secured the domain name 'time.nl', under which we offer this service, through <a href="https://www.sidn.nl/veilig-internet/dnssec">DNSSEC</a>. If your system supports this, you can be confident that you will not be sent to the wrong IP address if you want to go to 'ntp.time.nl'. The correct time is also important for DNSSEC to function properly. In some situations this causes a <a href="https://tools.ietf.org/html/draft-mglt-dnsop-dnssec-validator-requirements">chicken/egg problem</a> for example when systems without an embedded Real Time Clock (RTC) start up, do not yet have a sense of time (they think it is 1-1-1970), but still attempt to do DNSSEC validation to find the IP address of 'ntp.time.nl' (which then fails) <a href="https://marc.info/?l=openbsd-tech&m=156102757301757&w=2">Solutions</a> have already been devised for this, although it still remains a point of attention. For systems that are (roughly) synchronized in time, this is not a problem.
+              <p class="text-justify"><strong>Answer:</strong> The domain name used for this service, 'time.nl', is secured with <a href="https://www.sidn.nl/veilig-internet/dnssec">DNSSEC</a>. So, if your system supports DNSSEC, you can be confident that you won't be directed to a false IP address when you navigate to 'ntp.time.nl'. It's worth noting that accurate timing is needed for DNSSEC to work properly. So a <a href="https://tools.ietf.org/html/draft-mglt-dnsop-dnssec-validator-requirements">chicken-and-egg problem</a> can sometimes arise. For instance, when a system without an embedded Real Time Clock (RTC) starts up, it may have no idea of the time; it may think it's 1-1-1970, for example. If it then attempts to validate the IP address of 'ntp.time.nl' using DNSSEC, the validation will fail. <a href="https://marc.info/?l=openbsd-tech&m=156102757301757&w=2">Solutions</a> for that scenario have been devised, but it remains an issue. With systems that are already (roughly) synchronised, that shouldn't be a problem.
               </p>
             </div>
           </div>
           <br><br>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#authntp"><strong>Question:</strong> Do you also supply 'authenticated NTP'?</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#authntp"><strong>Question:</strong> Do you provide an authenticated NTP service?</button>
           <div id="authntp" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Answer:</strong> The standard (free and anonymous) public service does not have that. But authentication based on 'symmetric keys' is possible among registered users. Let us know if you need this and why. The decision as to whether we can subsequently offer this to you lies with us, as does the decision whether we will do this for free or for a small fee. We do set some requirements. For example, we do not use an <a href='https://tools.ietf.org/html/rfc8573'>MD5 algorithm</a> for our keys. We also consider the '<a href="https://tools.ietf.org/html/rfc5906">autokey</a>' protocol <a href="https://tools.ietf.org/html/rfc8633#section-4.2">insufficiently safe</a>. If you use OpenNTPd, so-called '<a href="https://www.undeadly.org/cgi?action=article&sid=20150210103656">TLS constraints</a>' may still be an option for you. We do not yet support the <a href='https://tools.ietf.org/html/draft-ietf-ntp-using-nts-for-ntp'>Network Time Security (NTS) protocol</a>, but we are closely following the development of this standard. Keep an eye on our messages about this. With one of the other answers in the FAQ you can read how we will keep you informed.
+              <p class="text-justify"><strong>Answer:</strong> Authenticated NTP isn't a feature of the basic (free and anonymous) public service. However, authentication based on symmetric keys is available to registered users by arrangement. If you'd like authentication, please get in touch and explain the background. We'll then decide whether we can provide the service, and whether we can do that for free (we may need to ask a modest fee). If we go ahead, certain conditions will apply. For example, we don't use an <a href='https://tools.ietf.org/html/rfc8573'>MD5 algorithm</a> for our keys. We don't think that the '<a href="https://tools.ietf.org/html/rfc5906">autokey</a>' protocol is <a href="https://tools.ietf.org/html/rfc8633#section-4.2">secure enough</a>, either. If you use OpenNTPd, '<a href="https://www.undeadly.org/cgi?action=article&sid=20150210103656">TLS constraints</a>' may still be an option for you. We don't yet support the <a href='https://tools.ietf.org/html/draft-ietf-ntp-using-nts-for-ntp'>Network Time Security (NTS) protocol</a>, but we're following the standard's development closely. Keep an eye on our news channels for updates about NTS. (See above, under How can I stay informed?)
               </p>
             </div>
           </div>
           <br><br>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqnts"><strong>Question:</strong> Is there NTS support?</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#faqnts"><strong>Question:</strong> Do you offer NTS support?</button>
           <div id="faqnts" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Answer:</strong> <a href="https://tools.ietf.org/html/draft-ietf-ntp-using-nts-for-ntp">Network Time Security (NTS)</a> is a standard in development. We currently do not yet offer this in our production environment. But we closely <a href="https://www.ietfjournal.org/a-new-security-mechanism-for-the-network-time-protocol/">follow the development</a> of the standard and it could just be that we set up a pilot to learn from. The same applies to '<a href="https://tools.ietf.org/html/draft-roughtime-aancha">roughtime</a>', if you wonder.
+              <p class="text-justify"><strong>Answer:</strong> The <a href="https://tools.ietf.org/html/draft-ietf-ntp-using-nts-for-ntp">Network Time Security (NTS)</a> is still under development. So we don't yet support it in our production environment. But we're <a href="https://www.ietfjournal.org/a-new-security-mechanism-for-the-network-time-protocol/">following developments</a> closely, and we may well set up a pilot to see how the standard works in practice. The same goes for  '<a href="https://tools.ietf.org/html/draft-roughtime-aancha">roughtime</a>', in case you're wondering.
               </p>
             </div>
           </div>
           <br><br>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#ptp"><strong>Question:</strong> Do you also supply PTP?</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#ptp"><strong>Question:</strong> Do you offer a PTP service?</button>
           <div id="ptp" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Answer:</strong> The <a href="https://en.wikipedia.org/wiki/Precision_Time_Protocol">Precision Time Protocol (PTP)</a> is an even more accurate form of time synchronization, which has very specific applications. We do not offer this as standard, but it is possible. If you are interested, please contact us.
+              <p class="text-justify"><strong>Answer:</strong> The <a href="https://en.wikipedia.org/wiki/Precision_Time_Protocol">Precision Time Protocol (PTP)</a> is an even more accurate form of time synchronisation, with very specific applications. We don't offer PTP as standard, but it can be enabled by arrangement. If you're interested, please get in touch.
               </p>
             </div>
           </div>
           <br><br>
-          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#ptbclock"><strong>Question:</strong> Nice logo with that clock, but why is it not running?</button>
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#ptbclock"><strong>Question:</strong> Nice clock logo! But why no running clock?</button>
           <div id="ptbclock" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Answer:</strong> We have considered, but we wanted to make something beautiful. So not as simple as a JavaScript thing that actually shows no more than the local time on your computer (even if it doesn't run smoothly), but rather a clock that shows whether your PC is running right or wrong. Until we found out that our friends at the German PTB <a href="https://uhr.ptb.de/">had already made something</a> that we can't really beat. Oh and is your device really 'in sync'? Then you might like <a href="https://draemm.li/various/bahnhofsuhr/">this station clock</a>.
+              <p class="text-justify"><strong>Answer:</strong> We did consider a running clock, but we wanted to make our website attractive. We didn't want a simple JavaScript thing that would only show the local time on your computer, even if it's wrong. So we looked at having a clock from which you could see whether your PC clock was right. But then we found out that our friends at the German PTB had <a href="https://uhr.ptb.de/">already created something like that</a> which we weren't going to beat. If your device is in sync, you might want to take a look at <a href="https://draemm.li/various/bahnhofsuhr/">this station clock</a>.
               </p>
             </div>
           </div>
@@ -342,10 +342,10 @@
           </ul>
           <h3><a id="backgroundinfo"></a>Features and background information</h3>
           <p class="text-justify">
-            The NTP service TimeNL from SIDN Labs is a so-called stratum 1 server with different reference clocks, which themselves are very precise atomic clocks. We synchronize not only with the <a href="https://www.gps.gov/">American GPS system</a>, but also with the <a href="https://www.gsa.europa.eu/european-gnss/galileo/galileo-european-global-satellite-based-navigation-system">European Galileo GNSS</a>. That way we reduce dependence on an American system, which distinguishes us from many other NTP servers. As the first backup, we also synchronize to the <a href="https://radiopedia.nl/wiki/DCF77_(tijdseinzender)">German DCF077 radio signal</a>. And as a second backup, we are still synchronizing with atomic clocks in the Netherlands (including that of <a href="https://www.vsl.nl/en/technologies/time-and-frequency">VSL in Delft</a>) <!-- TODO toevoegen UTC(VSL) --> en Belgiium.  Our hardware (for enthusiasts: we use the <a href="https://www.meinbergglobal.com/english/360/#ims-lantime-m3000">M3000 from Meinberg</a>, which we affectionately call "Arnold", after the maker and nickname of the silver pocket watch from <a href="https://en.wikipedia.org/wiki/Ruth_Belville">Ruth Belville</a>) automatically ensures that the most accurate reference clock is always chosen. This server is accessible via both a good (multi-homed) internet connection via both IPv4 and IPv6. In this way we are able to offer very precise time synchronization to many users. Of course we already have plans for the future. We will increase the number of NTP servers, if we can thereby increase the reliability of our service, and possibly make them accessible via BGP anycast, as we did for the DNS servers of the .nl domain.
+            TimeNL from SIDN Labs is a stratum 1 NTP service based on multiple very precise atomic reference clocks. Our server is synchronised not only with the <a href="https://www.gps.gov/">American GPS system</a>, but also with the <a href="https://www.gsa.europa.eu/european-gnss/galileo/galileo-european-global-satellite-based-navigation-system">European Galileo GNSS</a>. Unlike many other NTP services, we are not therefore fully dependent on an American system. As a first backup, we also synchronise with the <a href="https://www.ptb.de/cms/en/ptb/fachabteilungen/abt4/fb-44/ag-442/dissemination-of-legal-time/dcf77.html">German DCF077 radio signal</a>. And as a second backup, we synchronise with atomic clocks in the Netherlands (including the <a href="https://www.vsl.nl/en/technologies/time-and-frequency">VSL atomic clock in Delft</a>) <!-- TODO toevoegen UTC(VSL) --> and in Belgium as well. Our hardware automatically ensures that the most accurate reference clock is always chosen. (For enthusiasts: we use the <a href="https://www.meinbergglobal.com/english/360/#ims-lantime-m3000">M3000 from Meinberg</a>, which we affectionately call "Arnold", after the maker and nickname of <a href="https://en.wikipedia.org/wiki/Ruth_Belville">Ruth Belville</a>'s silver pocket watch.) Our server is accessible over a good (multi-homed) internet connection, using either IPv4 or IPv6. We are therefore able to offer very precise time synchronisation to a large number of users. Of course, we are already making plans for the future. We intend to increase the number of NTP servers, if we think that will increase the reliability of our service. We may also enable access via BGP anycast, as we did with the DNS servers for the .nl domain.
           </p>
           <p class="text-justify">
-            It is also good to know that we do not do so-called <a href="https://docs.ntpsec.org/latest/leapsmear.html">'leap smearing'</a>. What might also be interesting to know is that ntp.time.nl is part of the <a href="https://www.ntppool.org/user/b55tszdc8bp5mabfynaeb">NTP pool project</a>. And there is much more like this to say, which we will certainly do with some regularity in the future. So keep an eye on this site (and possibly our <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailinglijst</a>) and let us know if you have any questions. See also the <a href="#FAQ">'frequently asked questions'</a> section, elsewhere on this page.
+            A couple more points of interest: first, we don't do <a href="https://docs.ntpsec.org/latest/leapsmear.html">'leap smearing'</a>. Second, ntp.time.nl is part of the <a href="https://www.ntppool.org/user/b55tszdc8bp5mabfynaeb">NTP pool project</a>. There is lots more that we might add, and we're bound to be sharing ideas and information quite regularly from now on. So keep an eye on this site (and maybe the material we send to <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailinglijst</a>) and let us know if you have any questions. See also the <a href="#FAQ">'FAQs'</a> above.
           </p>
           <img class="img-fluid mx-auto d-block rounded" src="img/arnold.png" alt="Arnold pocket watch">
           <br>
