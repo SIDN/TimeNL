@@ -107,11 +107,15 @@
             <div class="alert alert-dark">
               <div class="codeclass">
                 <code>
-                # Voorbeeld 1: SIDN's ntp.time.nl (als geprefereerde NTP-server)<br>
-                server ntp.time.nl iburst prefer<br>
+                # Voorbeeld 1: SIDN's ntp.time.nl als geprefereerde NTP-server in pool-modus)<br>
+                pool ntp.time.nl iburst prefer<br>
                 <br>
-                # Voorbeeld 2: SIDN's ntp.time.nl met authenticatie (niet standaard mogelijk, wel evt. op aanvraag)<br>
-                server ntp.time.nl iburst key 1<br>
+                # Voorbeeld 2: SIDN's ntp1.time.nl en ntp2.time.nl als NTP-server in server-modus)<br>
+                server ntp1.time.nl iburst<br>
+                server ntp2.time.nl iburst<br> 
+                <br>
+                # Voorbeeld 3: SIDN's ntp.time.nl met authenticatie (niet standaard mogelijk, wel evt. op aanvraag)<br>
+                server ntp1.time.nl iburst key 1<br>
                 </code>
               </div>
               <p class="text-justify">Onder Unix/Linux/BSD/etc. zijn verschillende NTP-pakketten beschikbaar, zoals <a href="http://www.ntp.org/downloads.html">NTP</a>, <a href="https://ntpsec.org/">NTPsec</a>, <a href="https://chrony.tuxfamily.org/doc/3.5/chrony.conf.html">Chrony</a>, <a href="http://www.openntpd.org/manual.html">OpenNTPD</a>, enz. Meestal hebben ze een <samp>ntp.conf</samp>-bestand (soms ook wel <samp>ntpd.conf</samp> genaamd) om de NTP-server in te configureren. Een voorbeeld hiervan staat hierboven, maar raadpleeg ook de documentatie van het betreffende pakket, want in detail kunnen er verschillen zijn. Zo werkt <a href="https://help.ubuntu.com/lts/serverguide/NTP.html">Ubuntu standaard met timesyncd</a>, die soms in de weg zit als een ander NTP-pakket gewenst is. Maar, wil je geen ander NTP-pakket, dan is aanpassen van timesyncd simpel. Kort gezegd komt dit neer op; <samp>/etc/systemd/timesyncd.conf</samp> aanpassen. Zie <samp>man timesyncd.conf</samp>. Er is over dit alles veel informatie vinden op internet. En bij OpenNTPD wordt <samp>weight</samp> gebruikt in plaats van <samp>prefer</samp>.</p>
