@@ -349,7 +349,15 @@
               <p class="text-justify"><strong>Antwoord:</strong> Dat is onze publieke NTP-server op basis van anycast. Deze bestaat uit tientallen servers, verspreid over de hele wereld. Afhankelijk van waar je bent op de wereld, kom je bij de dichtstbijzijnde server om je tijd mee te synchroniseren. Hij is geconfigureerd op ons anycast-testbed. We ontvangen duizenden NTP-vragen van over de hele wereld op dit <a href="http://dnstest.nl/anycast2020/heatmaps/">anycast-testbed</a>, omdat het systeem onderdeel is van de <a href="https://www.ntppool.org/a/TimeNL">NTP-pool</a>.
               </p>
             </div>
-          </div>          
+          </div> 
+          <br><br>
+          <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#anytime"><strong>Vraag:</strong> Ik kwam ook ntppool1.time.nl en ntppool2.time.nl tegen, wat zijn dat?</button>
+          <div id="anytime" class="collapse">
+            <div class="alert alert-dark">
+              <p class="text-justify"><strong>Antwoord:</strong> Dat zijn eveneens publieke NTP-servers (op basis van unicast). Het zijn krachtige systemen die heel wat NTP-vragen aankunnen en die onderdeel zijn van de <a href="https://www.ntppool.org/a/TimeNL">NTP-pool</a>. Naast NTP, ondersteunen ze ook <a href="https://datatracker.ietf.org/doc/html/rfc8915">NTS (RFC8915)</a>.
+              </p>
+            </div>
+          </div>                     
           <br><br>
           <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#ptbclock"><strong>Vraag:</strong> Leuk logo met die klok, maar waarom loopt hij niet?</button>
           <div id="ptbclock" class="collapse">
