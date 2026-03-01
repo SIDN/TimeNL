@@ -119,6 +119,10 @@ code {
     color: yellow;
 }
 
+pre {
+    color: yellow;
+}
+
 .clocklogo {
     display: block;
     color: #fff;

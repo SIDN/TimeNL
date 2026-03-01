@@ -332,7 +332,29 @@
           <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#roughtime"><strong>Vraag:</strong> Is er ondersteuning voor Roughtime?</button>
           <div id="roughtime" class="collapse">
             <div class="alert alert-dark">
-              <p class="text-justify"><strong>Antwoord:</strong> Nee, <a href="https://datatracker.ietf.org/doc/html/draft-ietf-ntp-roughtime">roughtime</a>' ondersteunen we nog niet. </p>
+              <p class="text-justify"><strong>Antwoord:</strong> Ja, <a href="https://datatracker.ietf.org/doc/html/draft-ietf-ntp-roughtime">roughtime</a>' ondersteunen we op rough.time.nl:2002 als een pilot. Dit protocol is nog in ontwikkeling en er kunnen nog zaken veranderen, zoals het poortnummer. Hou daarom deze site in de gaten. Voeg dit toe aan je server list:
+              <br>
+<div class="codeclass">
+<pre>
+{
+  "servers": [
+    {
+      "name": "TimeNL-Roughtime",
+      "publicKey": "v2CievhgKsxzlWPwIkYFUXeA51Akhkv5uhJCj1/kbiY=",
+      "addresses": [
+        {
+          "protocol": "udp",
+          "address": "rough.time.nl:2002"
+        }
+      ]
+    }
+  ]
+}
+</pre>
+</div>
+<br>
+Maar zorg ervoor dat je minimaal 2 andere Roughtime servers daaraan hebt toegevoegd! Overweeg ook om lettelijk de IPv4 en/of IPv6-adressen van onze server te gebruiken, i.p.v. de FQDN, om DNSSEC-bootstrap problemen te voorkomen.
+</p>
             </div>
           </div>
           <br><br>          
