@@ -122,10 +122,10 @@
               <p class="text-justify">Another option is h=the <a href="https://github.com/pendulum-project/ntpd-rs">ntpd-rs</a> package. Where the configuration would be something like this:
               <div class="codeclass">
                 <code>
-                [[source]]
-                mode = "pool"
-                address = "ntp.time.nl"
-                ntp-version = "auto"
+                [[source]]<br>
+                mode = "pool"<br>
+                address = "ntp.time.nl"<br>
+                ntp-version = "auto"<br>
                 </code>
               </div>
               <p class="text-justify">Another option is not to work with a daemon, but to periodically synchronise your server with CRON. In the example below, we have opted for weekly synchronisation (at a fairly random time, not at minute '0', in order to avoid overload peaks). However, you can of course synchronise more often if you wish. Do not synchronise more than once an hour, though, and not on the hour, but at a randomly chosen time.</p>
