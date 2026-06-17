@@ -1,0 +1,46 @@
+          <div class="clock-widget">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 300 150"
+                 role="img"
+                 aria-label="TimeNL digitale klok">
+
+              <g font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace"
+                 font-variant-numeric="tabular-nums">
+
+                <rect id="timenlDisplayBackground"
+                      x="5" y="5" width="290" height="140" rx="15"
+                      data-fill-connected="rgb(240,244,248)"
+                      data-fill-disconnected="rgb(255,235,230)"/>
+
+                <text id="timenlNotice"
+                      x="150" y="80"
+                      text-anchor="middle"
+                      data-not-connected="Connection lost!">Initializing…</text>
+
+                <text x="150" y="85" id="timenlTime" text-anchor="middle"></text>
+
+                <g text-anchor="middle">
+                  <text x="150" y="98" id="timenlDate"></text>
+                  <text x="150" y="110" id="timenlLocalTimezone"
+                        role="button" tabindex="0" aria-label="Wissel tijdzone"></text>
+                </g>
+
+                <g id="timenlDeviationIcon" transform="translate(260,115) scale(.25)" visibility="hidden"
+                   role="button" aria-label="Toon systeemafwijking" tabindex="0">
+                  <rect x="0" y="0" width="80" height="80" fill="transparent" />
+                  <path d="M 10,55 A 32,32 0 0,1 70,55" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+                  <circle cx="40" cy="55" r="4" fill="currentColor"/>
+                  <line id="timenlDeviationNeedle" x1="40" y1="55" x2="20" y2="30" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+                </g>
+
+                <g id="timenlDeviation" text-anchor="middle" visibility="hidden">
+                  <text x="150" y="137">
+                    System deviation: <tspan id="timenlOffset" font-weight="bold"></tspan>
+                    <tspan id="timenlAccuracy"></tspan>
+                  </text>
+                </g>
+
+              </g>
+            </svg>
+          </div>
+          <!-- end digital clock -->

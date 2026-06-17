@@ -1,0 +1,746 @@
+/* uhrstyle.css — TimeNL Publieke NTP-dienst
+ * Merges former style.css and uhr.css
+ * Partly vibe coded with several models, including ChatGPT, Gemini and Claude
+ * SIDN Labs — M. Davids
+ * Version: 20260616-01 (https://time.nl/)
+ *
+ */
+
+@font-face {
+    font-family: "Milo Serif";
+    font-display: block;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/MiloSerifWeb.woff) format("woff")
+}
+
+@font-face {
+    font-family: "Milo Sans";
+    font-display: block;
+    font-style: normal;
+    font-weight: 500;
+    src: url(/fonts/MiloWeb-Medium.woff) format("woff")
+}
+
+/* --- Design tokens --------------------------------------------- */
+:root {
+    --teal:        #22abaa;
+    --teal-dark:   #1a8887;
+    --teal-dim:    rgba(34,171,170,.15);
+    --teal-light:  #e6f5f5;
+    --teal-deep:   #156e6d;
+    --navy:        #002154;
+    --accent:      #2da9cb;
+    --text:        #2e3a40;
+    --text-muted:  #5e7070;
+    --bg:          #f0f4f4;
+    --surface:     #ffffff;
+    --border:      #d8e4e4;
+    --radius:      10px;
+    --radius-lg:   16px;
+    --shadow-sm:   0 1px 4px rgba(0,60,60,.08);
+    --shadow-md:   0 4px 20px rgba(0,60,60,.12);
+    --shadow-lg:   0 10px 48px rgba(0,60,60,.16);
+    --transition:  .22s cubic-bezier(.4,0,.2,1);
+    --dot-color:   rgba(34,171,170,.12);
+}
+
+/* --- Base ------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg);
+    background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+    background-size: 22px 22px;
+    color: var(--text);
+    font-family: "Milo Serif", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+li { font-family: "Milo Serif", Georgia, serif; }
+
+h1, h2, h3, h4 {
+    font-family: "Milo Sans", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--navy);
+    letter-spacing: -.02em;
+}
+
+h1 { font-size: 1.75rem; margin-top: 0; padding: 0 0 .25rem; }
+
+h3 {
+    font-size: 1.15rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--text-muted);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: .45em;
+}
+h3::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    margin-left: .25em;
+}
+
+p {
+    font-family: "Milo Serif", Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin: 0 0 1.25rem;
+}
+
+/* --- Navbar ---------------------------------------------------- */
+.navbar {
+    background-color: rgba(255,255,255,.92) !important;
+    border-bottom: 1px solid var(--border);
+    padding: .7rem 1.5rem;
+    box-shadow: 0 1px 0 var(--border), var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    color: var(--teal) !important;
+    font-size: 1.35rem;
+    transition: color var(--transition), transform var(--transition);
+    display: inline-block;
+}
+.navbar-brand:hover {
+    color: var(--teal-dark) !important;
+    transform: scale(1.1);
+}
+
+/* Language switcher */
+.nav-lang {
+    margin-left: auto;
+    font-size: .88rem;
+    font-family: "Milo Sans", sans-serif;
+    color: var(--text-muted) !important;
+    transition: color var(--transition);
+    padding: .35rem .65rem !important;
+    border-radius: 6px;
+    text-decoration: none;
+    border-bottom: none !important;
+}
+.nav-lang:hover {
+    color: var(--teal-dark) !important;
+    background-color: var(--teal-dim);
+}
+
+.nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    font-size: .9rem;
+    font-family: 'Milo Sans', sans-serif;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    transition: color var(--transition), background var(--transition);
+    padding: .35rem .85rem !important;
+    border-radius: 6px;
+}
+.nav-link:hover {
+    color: var(--teal-dark) !important;
+    background-color: var(--teal-dim);
+}
+
+/* --- Hero ------------------------------------------------------ */
+.jumbotron#customtron {
+    background:
+        radial-gradient(ellipse 70% 90% at 85% 15%, rgba(255,255,255,.08) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 60% at 10% 85%, rgba(0,0,0,.12) 0%, transparent 50%),
+        linear-gradient(160deg, var(--teal-deep) 0%, var(--teal) 60%, #29c8c7 100%);
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 3.75rem 1.5rem 3.25rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+/* Subtle grid lines in hero — clock-face nod */
+.jumbotron#customtron::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+
+.jumbotron#customtron::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom right, transparent 49%, var(--bg) 50%);
+    pointer-events: none;
+}
+
+p#customtron1 {
+    font-family: "Milo Sans", sans-serif;
+    font-size: clamp(3rem, 9vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: -.04em;
+    line-height: 1;
+    height: auto;
+    margin-bottom: .4rem;
+    position: relative;
+}
+
+p#customtron2 {
+    font-size: clamp(.85rem, 2vw, 1.1rem);
+    font-family: "Milo Sans", sans-serif;
+    font-weight: 500;
+    opacity: .7;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/* Clock logo in hero */
+.clocklogo {
+    display: block;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 auto 1.35rem;
+    position: relative;
+}
+.clocklogo-outline {
+    background-color: rgba(255,255,255,.08);
+    border: 1.5px solid rgba(255,255,255,.3);
+    backdrop-filter: blur(6px);
+}
+.clocklogo-lg {
+    width: 88px;
+    height: 88px;
+    font-size: 46px;
+    line-height: 88px;
+}
+
+/* --- Hero button ----------------------------------------------- */
+.btn-hero {
+    background-color: transparent;
+    border: 1.5px solid rgba(255,255,255,.55);
+    color: #fff !important;
+    border-radius: var(--radius) !important;
+    font-family: "Milo Sans", sans-serif;
+    font-weight: 600;
+    font-size: .88rem;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    padding: .6rem 1.6rem;
+    transition: all var(--transition);
+    position: relative;
+    cursor: pointer;
+}
+.btn-hero:hover {
+    background-color: #fff;
+    color: var(--teal-deep) !important;
+    border-color: #fff;
+    box-shadow: 0 6px 24px rgba(0,0,0,.25);
+    transform: translateY(-2px);
+}
+
+/* --- Dutch flag ribbon ----------------------------------------- */
+img#flagribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    width: 120px;
+    pointer-events: none;
+}
+@media (max-width: 576px) {
+    img#flagribbon { width: 80px; }
+}
+
+/* --- Main content ---------------------------------------------- */
+.main-content {
+    padding-top: 2.75rem;
+    padding-bottom: 3rem;
+}
+
+/* --- Intro card ------------------------------------------------ */
+.intro-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+}
+.intro-card p { margin: 0; }
+
+/* --- Alert boxes ----------------------------------------------- */
+.alert {
+    font-family: "Milo Sans", sans-serif;
+    font-size: .98rem;
+    line-height: 1.55;
+    border-radius: var(--radius);
+    border: none;
+    margin-bottom: 1.25rem;
+}
+.alert-warning {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    color: #78350f;
+}
+.alert-info {
+    background: #eff8ff;
+    border-left: 4px solid var(--accent);
+    color: #0c4a6e;
+}
+.alert-success {
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    color: #14532d;
+}
+.alert-dark {
+    background: var(--surface);
+    border-left: 4px solid var(--border);
+    color: var(--text);
+}
+/* Bootstrap 5 close button inside alert */
+.alert .btn-close { opacity: .5; }
+.alert .btn-close:hover { opacity: 1; }
+
+/* --- Collapsible setup sections -------------------------------- */
+/* Each section (howto / FAQ / background) has its own group     */
+.collapse-group {
+    margin-bottom: 1.75rem;
+}
+.btn-accordion {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius) !important;
+    color: var(--navy);
+    font-family: "Milo Sans", sans-serif;
+    font-weight: 600;
+    font-size: .92rem;
+    padding: .65rem 1rem;
+    text-align: left;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: .45rem;
+}
+.btn-accordion:hover {
+    background: var(--teal-light);
+    border-color: var(--teal);
+    color: var(--teal-dark);
+    box-shadow: var(--shadow-sm);
+}
+.btn-accordion.active {
+    background: var(--teal-deep);
+    border-color: var(--teal-deep);
+    color: #fff;
+}
+.btn-accordion .chevron {
+    margin-left: auto;
+    font-size: .65em;
+    opacity: .5;
+    transition: transform var(--transition);
+}
+.btn-accordion.active .chevron {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+/* Question label styling */
+.btn-accordion .q-label {
+    color: var(--teal-dark);
+    font-size: .75em;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-right: .3em;
+    flex-shrink: 0;
+}
+.btn-accordion.active .q-label { color: rgba(255,255,255,.7); }
+
+.accordion-panel {
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: .75rem;
+    font-size: .98rem;
+    line-height: 1.65;
+    animation: panelIn .18s ease;
+}
+.accordion-panel.open { display: block; }
+.accordion-panel p { margin-bottom: .75rem; }
+.accordion-panel p:last-child { margin: 0; }
+/* Nested alert inside panel */
+.accordion-panel .alert { margin-bottom: .75rem; }
+.accordion-panel .alert:last-child { margin-bottom: 0; }
+/* Images inside panels */
+.accordion-panel img { margin-bottom: 1rem; }
+
+@keyframes panelIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Code blocks ----------------------------------------------- */
+div.codeclass {
+    display: block;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 10px;
+}
+code { color: #79c0ff; font-family: 'SFMono-Regular', 'Cascadia Code', 'Fira Code', Consolas, monospace; font-size: .875rem; }
+pre  { color: #79c0ff; font-family: 'SFMono-Regular', 'Cascadia Code', 'Fira Code', Consolas, monospace; font-size: .875rem; margin: 0; }
+
+/* --- Operational status ---------------------------------------- */
+
+/* Spinning status icon in navbar */
+.icon-status {
+    font-size: .65em;
+    margin-right: .3em;
+    opacity: .5;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 1.75rem;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: .45rem;
+    top: .4rem;
+    bottom: .4rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--teal), var(--border));
+    border-radius: 2px;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    box-shadow: var(--shadow-sm);
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.38rem;
+    top: 1rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--teal);
+    border: 2px solid var(--surface);
+    box-shadow: 0 0 0 2px var(--teal);
+}
+.timeline-item.status-ok::before  { background: #22c55e; box-shadow: 0 0 0 2px #22c55e; }
+.timeline-item.status-warn::before { background: #f59e0b; box-shadow: 0 0 0 2px #f59e0b; }
+.timeline-item.status-unknown::before { background: #9ca3af; box-shadow: 0 0 0 2px #0ca3af; }
+.timeline-date {
+    font-family: "Milo Sans", sans-serif;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--teal-dark);
+    letter-spacing: .04em;
+    margin-bottom: .25rem;
+    display: flex;
+    align-items: center;
+    gap: .4em;
+}
+.timeline-text {
+    font-size: .95rem;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Server status table */
+.status-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Milo Sans", sans-serif;
+    font-size: .92rem;
+    margin-top: 1rem;
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+.status-table thead th {
+    background: var(--teal-deep);
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    font-size: .78rem;
+    padding: .65rem 1rem;
+    text-align: left;
+}
+.status-table tbody td,
+.status-table tbody th {
+    padding: .65rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+.status-table tbody tr:last-child td,
+.status-table tbody tr:last-child th { border-bottom: none; }
+.status-server { color: var(--navy); font-weight: 600; font-family: 'SFMono-Regular', Consolas, monospace; font-size: .88rem; }
+.status-ok-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .35em;
+    background: #f0fdf4;
+    color: #16a34a;
+    border-radius: 20px;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .15em .7em;
+    letter-spacing: .03em;
+}
+.status-warn-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .35em;
+    background: #fef3c7;
+    color: #d97706;
+    border-radius: 20px;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .15em .7em;
+    letter-spacing: .03em;
+}
+.status-alarm-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .35em;
+    background: #fee2e2;
+    color: #dc2626;
+    border-radius: 20px;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .15em .7em;
+    letter-spacing: .03em;
+}
+.status-unknown-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .35em;
+    background: #f3f4f6;
+    color: #4b5563;
+    border-radius: 20px;
+    font-size: .8rem;
+    font-weight: 700;
+    padding: .15em .7em;
+    letter-spacing: .03em;
+}
+
+/* --- Misc ------------------------------------------------------- */
+#stratum2margin { margin: 3%; }
+ul#bulletless { list-style-type: none; }
+
+/* --- Links ----------------------------------------------------- */
+a:not([class]) {
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+    transition: color var(--transition), border-color var(--transition);
+}
+a:not([class]):hover {
+    color: var(--teal-dark);
+    border-bottom-color: currentColor;
+    text-decoration: none;
+}
+a.page-link { color: var(--accent); border-radius: 6px; }
+a.page-link:hover { background-color: var(--teal-light); color: var(--teal-dark); }
+a.hreflogo { border-bottom: none !important; }
+
+/* --- Logo ------------------------------------------------------ */
+img.logo {
+    height: 32px;
+    opacity: .75;
+    transition: opacity var(--transition);
+    vertical-align: middle;
+}
+img.logo:hover { opacity: 1; }
+
+/* --- Back to top ----------------------------------------------- */
+ul.pagination { margin-top: 2rem; }
+.page-link {
+    border-radius: 6px !important;
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-family: "Milo Sans", sans-serif;
+    font-size: .88rem;
+}
+
+/* --- Footer row ------------------------------------------------ */
+.footer-row {
+    border-top: 1px solid var(--border);
+    padding: 1.25rem 2rem;
+    font-size: .88rem;
+    color: var(--text-muted);
+    font-family: "Milo Sans", sans-serif;
+    background: rgba(255,255,255,.7);
+}
+
+/* Icon helpers */
+.icon-btn     { margin-right: .45em; }
+.icon-heading { color: var(--teal); margin-right: .35em; font-size: .85em; }
+.icon-alert   { margin-right: .35em; font-size: .85em; }
+.icon-teal    { color: var(--teal); margin-right: .3em; }
+
+/* --- Responsive ------------------------------------------------ */
+@media (max-width: 576px) {
+    .jumbotron#customtron { padding: 2.5rem 1rem 2rem; }
+}
+
+/* ================================================================
+   DIGITALE KLOK (voorheen uhr.css)
+   ================================================================ */
+
+/* -- Klok-widget container -------------------------------------- */
+.clock-widget {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.clock-widget svg {
+    /* Maximaal 320px breed, schaalt mee naar beneden */
+    width: min(320px, 100%);
+    height: auto;
+    /* Geen focus-ring op het SVG-element zelf */
+    outline: none;
+}
+
+/* -- Display background -- */
+#timenlDisplayBackground {
+    stroke: none;
+    fill: rgb(239, 248, 254);
+    transition: fill 0.5s ease;
+}
+
+/* Status notice */
+#timenlNotice {
+    fill: #e82122;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Main time display */
+#timenlTime {
+    fill: var(--navy);
+    font-size: 42px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    transition: fill 0.3s ease;
+}
+
+/* Date + timezone labels */
+#timenlDate {
+    font-size: 10px;
+    font-weight: 500;
+    fill: var(--navy);
+    user-select: none;
+}
+
+/* Tijdzone-knop: geen outline, ook niet als Bootstrap dat probeert te zetten */
+#timenlLocalTimezone {
+    font-size: 10px;
+    font-weight: 600;
+    fill: #556b8d;
+    opacity: 0.85;
+    user-select: none;
+    cursor: pointer;
+    transition: fill 0.2s ease, opacity 0.2s ease;
+    outline: none !important;
+}
+#timenlLocalTimezone:hover,
+#timenlLocalTimezone:focus,
+#timenlLocalTimezone:focus-visible {
+    fill: #3163b8;
+    opacity: 1;
+    outline: none !important;
+}
+
+/* Deviation icon */
+#timenlDeviationIcon {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+#timenlDeviationIcon:hover { opacity: 0.75; }
+
+/* Icon basestyles */
+#timenlDeviationIcon path {
+    stroke: var(--navy);
+    stroke-width: 4px;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+#timenlDeviationIcon circle,
+#timenlDeviationIcon line {
+    fill: none;
+    stroke: var(--navy);
+    stroke-width: 5px;
+}
+#timenlDeviationIcon circle {
+    fill: var(--navy);
+}
+
+/* Vloeiende naald-animatie */
+#timenlDeviationNeedle {
+    transform-origin: 40px 55px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), stroke 0.3s ease;
+}
+
+/* Actieve staat van de Deviation Button */
+#timenlDeviationIcon.active path,
+#timenlDeviationIcon.active circle,
+#timenlDeviationIcon.active #timenlDeviationNeedle {
+    stroke: #45c0b6;
+}
+#timenlDeviationIcon.active circle {
+    fill: #45c0b6;
+}
+#timenlDeviationIcon.active #timenlDeviationNeedle {
+    transform: rotate(35deg);
+}
+
+/* Deviation area */
+#timenlDeviation { fill: var(--navy); }
+#timenlDeviation text { font-size: 9px; }
+#timenlAccuracy { font-size: 8px; fill: #556b8d; }
