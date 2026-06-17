@@ -4,6 +4,8 @@
  * Partly vibe coded with several models, including ChatGPT, Gemini and Claude
  * SIDN Labs — M. Davids
  *
+ * Simplified version - does not do leapseconds and has no speech.
+ *
  */
 (function () {
   'use strict';
