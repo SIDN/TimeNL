@@ -1,7 +1,7 @@
-/* uhrstyle.css — TimeNL Publieke NTP-dienst
+/* uhrstyle.css - TimeNL Publieke NTP-dienst
  * Merges former style.css and uhr.css
  * Partly vibe coded with several models, including ChatGPT, Gemini and Claude
- * SIDN Labs — M. Davids
+ * SIDN Labs - M. Davids
  * Version: 20260616-01 (https://time.nl/)
  *
  */
@@ -173,7 +173,7 @@ p {
     border-radius: 0;
 }
 
-/* Subtle grid lines in hero — clock-face nod */
+/* Subtle grid lines in hero - clock-face nod */
 .jumbotron#customtron::before {
     content: '';
     position: absolute;
