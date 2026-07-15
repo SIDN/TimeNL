@@ -43,6 +43,7 @@
       </div>
     </nav>
 
+<!-- Temporarily disabled, until we have a better idea of ​​how we want to display this feature.
     <div class="jumbotron" id="customtron">
       <span class="clocklogo clocklogo-lg clocklogo-outline"><span class="far fa-clock"></span></span>
       <p id="customtron1">TimeNL</p>
@@ -52,6 +53,7 @@
       </button>
     </div>
     <!-- end of jumbotron -->
+-->
 
     <div class="container-fluid">
       <div class="row justify-content-center">
@@ -75,7 +77,9 @@
             <p>* We are now also supporting <a href="https://nts.time.nl/">Roughtime</a> as a pilot.</p>
             <p>* See also  <a href="https://nts.time.nl">our dedicated website about NTS</a> (Network Time Security).</p>
             <p>* Our NTS servers are now part of a pool. You can use the 'pool directive' (ntspool.time.nl) if you want.</p>
+<!--
             <p class="mb-0">*Also, ntp.time.nl has been operating as a pool for quite some time. If you have configured it using the 'server directive', you may want to switch to the 'pool directive' instead.</p>
+-->
           </div>
 
           <h1><a id="start"></a>TimeNL</h1>
@@ -110,10 +114,11 @@
               <span class="fas fa-chevron-down chevron"></span>
             </button>
             <div id="osx" class="accordion-panel">
-              <img class="img-fluid" src="/img/settings_ntp_time_nl_apple.png" alt="Settings OSX">
-              <p>You can specify multiple NTP servers here, separated by commas. On the command line, this can be done via <samp>systemsetup -setnetworktimeserver "ntp.time.nl"</samp> (activate this using <samp>systemsetup -setusingnetworktime on</samp>). You can also add multiple NTP servers directly to the <samp>/private/etc/ntp.conf</samp> file.</p>
+<!--              <img class="img-fluid" src="/img/settings_ntp_time_nl_apple.png" alt="Settings OSX"> -->
+              <p>The setup is explained on <a href="https://support.apple.com/en-gb/guide/mac-help/mchlp2996/mac">this page</a>.</p>
+              <p>You can specify multiple NTP servers here, separated by commas. On the command line, this can be done via <samp>systemsetup -setnetworktimeserver "ntppool.time.nl"</samp> (activate this using <samp>systemsetup -setusingnetworktime on</samp>). You can also add multiple NTP servers directly to the <samp>/private/etc/ntp.conf</samp> file.</p>
               <div class="alert alert-warning" role="alert">
-                <strong>Note: </strong>in your settings, use only the name ('ntp.time.nl') and not the corresponding IP address, because we reserve the right to change that IP address in the future without notice.
+                <strong>Note: </strong>in your settings, use only the name ('ntppool.time.nl') and not the corresponding IP address, because we reserve the right to change that IP address in the future without notice.
               </div>
             </div>
 
@@ -124,10 +129,10 @@
             <div id="windows" class="accordion-panel">
               <img class="img-fluid mx-auto d-block rounded" src="/img/ntp-time-nl_windows1.jpg" alt="Settings Windows step 1"><br>
               <img class="img-fluid mx-auto d-block rounded" src="/img/ntp-time-nl_windows2.jpg" alt="Settings Windows step 2"><br>
-              <img class="img-fluid mx-auto d-block rounded" src="/img/ntp-time-nl_windows3.jpg" alt="Settings Windows step 3"><br>
+<!--               <img class="img-fluid mx-auto d-block rounded" src="/img/ntp-time-nl_windows3.jpg" alt="Settings Windows step 3"><br> -->
               <p>The images above illustrate the steps for setting up a workstation. If you are a system administrator, also refer to <a href="https://docs.microsoft.com/en-us/windows-server/networking/windows-time-service/how-the-windows-time-service-works">Microsoft's explanation of the Windows Time Service</a>.</p>
               <div class="alert alert-warning" role="alert">
-                <strong>Note: </strong>in your settings, use only the name ('ntp.time.nl') and not the corresponding IP address, because we reserve the right to change that IP address in the future without notice.
+                <strong>Note: </strong>in your settings, use only the name ('ntppool.time.nl') and not the corresponding IP address, because we reserve the right to change that IP address in the future without notice.
               </div>
             </div>
 
@@ -139,15 +144,16 @@
             <div id="unix" class="accordion-panel">
               <div class="codeclass">
                 <code>
-# Example 1: SIDN's ntp.time.nl as preferred NTP server (in pool mode)<br>
-pool ntp.time.nl iburst prefer<br>
+# Example 1: SIDN's ntppool.time.nl as preferred NTP server (in pool mode)<br>
+pool ntppool.time.nl iburst prefer<br>
 <br>
-# Example 2: SIDN's ntp1.time.nl and ntp2.time.nl as NTP servers (in server mode)<br>
-server ntp1.time.nl iburst<br>
-server ntp2.time.nl iburst<br>
+# Example 2: SIDN's ntppool1.time.nl and ntppool3.time.nl as NTP servers (in server mode)<br>
+server ntppool1.time.nl iburst<br>
+server ntppool3.time.nl iburst<br>
 <br>
-# Example 3: SIDN's ntp.time.nl with authentication (not supported by default, but available by arrangement)<br>
-server ntp1.time.nl iburst key 1
+# Example 3: SIDN's Network Time Security (NTS) pool<br>
+# (only works with compatible software, such as Chrony or NTPsec)<br>
+pool ntspool.time.nl iburst nts
                 </code>
               </div>
               <p>Various NTP packages are available for Unix/Linux/BSD/etc., including <a href="http://www.ntp.org/downloads.html">NTP</a>, <a href="https://ntpsec.org/">NTPsec</a>, <a href="https://chrony.tuxfamily.org/doc/3.5/chrony.conf.html">Chrony</a> and <a href="http://www.openntpd.org/manual.html">OpenNTPD</a> (where the 'pool' directive is called <samp>servers</samp>, with an 's'). They usually have an <samp>ntp.conf</samp> file (sometimes also called <samp>ntpd.conf</samp>) for configuring the NTP server. See the example above, but also consult the documentation for the relevant package, as there may be differences in the details. For instance, <a href="https://ubuntu.com/server/docs/network-ntp">Ubuntu works with timesyncd by default</a>, which can sometimes get in the way if you want to use a different NTP package. However, if you do not want a different NTP package, adjusting timesyncd is straightforward. In short, it comes down to editing <samp>/etc/systemd/timesyncd.conf</samp>. See <samp>man timesyncd.conf</samp>. There is plenty of information about all of this on the internet. Note that with OpenNTPD, <samp>weight</samp> is used instead of <samp>prefer</samp>.</p>
@@ -156,20 +162,21 @@ server ntp1.time.nl iburst key 1
                 <code>
 [[source]]<br>
 mode = "pool"<br>
-address = "ntp.time.nl"<br>
+address = "ntppool.time.nl"<br>
 ntp-version = "auto"
                 </code>
               </div>
+              <p>Select <samp>mode = "nts-pool"</samp> with <samp>address = "ntspool.time.nl"</samp> for NTS.</p>
               <p>Yet another option is not to use a daemon at all, but to synchronise your server periodically via CRON. In the example below, this is done weekly (at a fairly random time — not at minute '0' — to avoid overload peaks), but you can of course synchronise more often. However, do not do so more than once per hour, and not on the hour itself; choose a random minute instead.</p>
               <div class="codeclass">
                 <code>
 # Update ntpdate every Wednesday at 4 minutes past 11:00 am<br>
-04 11 * * 3     /usr/sbin/ntpdate ntp.time.nl 2&gt;&amp;1 &gt;/dev/null<br>
+04 11 * * 3     /usr/sbin/ntpdate ntppool.time.nl 2&gt;&amp;1 &gt;/dev/null<br>
 #
                 </code>
               </div>
               <div class="alert alert-warning" role="alert">
-                <strong>Note: </strong>in your settings, use only the name ('ntp.time.nl') and not the corresponding IP address, because we reserve the right to change that IP address in the future without notice.
+                <strong>Note: </strong>in your settings, use only the name ('ntppool.time.nl') and not the corresponding IP address, because we reserve the right to change that IP address in the future without notice.
               </div>
             </div>
 
@@ -184,24 +191,24 @@ ntp-version = "auto"
 router# config t<br>
 Enter configuration commands, one per line.  End with CNTL/Z.<br>
 router(config)# no ntp server<br>
-router(config)# ntp server ntp.time.nl prefer<br>
+router(config)# ntp server ntppool.time.nl prefer<br>
 router(config)# copy running-config startup-config
                 </code>
               </div>
-              <p>When following the example above, we recommend including a few other reliable stratum&nbsp;1 servers in addition to ntp.time.nl (without the 'prefer' suffix).</p>
+              <p>When following the example above, we recommend including a few other reliable stratum&nbsp;1 servers in addition to ntppool.time.nl (without the 'prefer' suffix).</p>
               <p>Juniper JunOS:</p>
               <div class="codeclass">
                 <code>
 system {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;ntp {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server ntp.time.nl prefer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server ntppool.time.nl prefer;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 }
                 </code>
               </div>
-              <p>When following the example above, we recommend including a few other reliable stratum&nbsp;1 servers in addition to ntp.time.nl (without the 'prefer' suffix).</p>
+              <p>When following the example above, we recommend including a few other reliable stratum&nbsp;1 servers in addition to ntppool.time.nl (without the 'prefer' suffix). JunOS also <a href="https://www.juniper.net/documentation/us/en/software/junos/time-mgmt/time-mgmt.pdf">supports NTS</a>.</p>
               <div class="alert alert-warning" role="alert">
-                <strong>Note: </strong>we recommend configuring only the name ('ntp.time.nl') and not the corresponding IP address, because we reserve the right to change that IP address in the future without notice. We do appreciate, however, that this is not always possible. Some firewalls and routers resolve the NTP server name to its IP address before storing it in the configuration. In that case, you will need to monitor whether the IP address changes.
+                <strong>Note: </strong>we recommend configuring only the name ('ntppool.time.nl') and not the corresponding IP address, because we reserve the right to change that IP address in the future without notice. We do appreciate, however, that this is not always possible. Some firewalls and routers resolve the NTP server name to its IP address before storing it in the configuration. In that case, you will need to monitor whether the IP address changes.
               </div>
             </div>
 
@@ -293,7 +300,7 @@ system {<br>
               </ul>
               <p>The symbols indicate the likely (primary) reference clock for each system: <span class="fas fa-globe icon-teal"></span> for <a href="https://www.gsa.europa.eu/european-gnss/what-gnss">GNSS</a> (i.e. GPS only, as far as we are aware) and <span class="fas fa-atom icon-teal"></span> for atomic clock. There are many more good NTP servers, both in the Netherlands and in neighbouring countries — this list is merely a suggestion.</p>
               <div class="alert alert-warning" role="alert">
-                <strong>Note: </strong>in your settings, use only the name ('ntp.time.nl') and not the corresponding IP address, because we reserve the right to change that IP address in the future without notice.
+                <strong>Note: </strong>in your settings, use only the name ('ntppool.time.nl') and not the corresponding IP address, because we reserve the right to change that IP address in the future without notice.
               </div>
             </div>
 
@@ -302,7 +309,7 @@ system {<br>
               <span class="fas fa-chevron-down chevron"></span>
             </button>
             <div id="faqvendor" class="accordion-panel">
-              <p>Hard-coding 'ntp.time.nl' into the firmware of products marketed on a large scale, for example, is contrary to our terms of use. If you wish to do something like that, please contact us first. We follow the same policy as the <a href="https://www.ntppool.org/en/vendors.html">NTP pool project</a>, meaning that we reserve a dedicated name for your application ('ntp.brandname.time.nl') and discuss your requirements with you, so that we can better anticipate the potential <a href="https://en.wikipedia.org/wiki/NTP_server_misuse_and_abuse">risk of capacity overruns</a>.<!-- We also advise joining our <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailing list</a>, so that you are always kept up to date with any developments.-->
+              <p>Hard-coding 'ntppool.time.nl' into the firmware of products marketed on a large scale, for example, is contrary to our terms of use. If you wish to do something like that, please contact us first. We follow the same policy as the <a href="https://www.ntppool.org/en/vendors.html">NTP pool project</a>, meaning that we reserve a dedicated name for your application ('ntp.brandname.time.nl') and discuss your requirements with you, so that we can better anticipate the potential <a href="https://en.wikipedia.org/wiki/NTP_server_misuse_and_abuse">risk of capacity overruns</a>.<!-- We also advise joining our <a href="https://mailman.sidn.nl/cgi-bin/mailman/listinfo/time-users">mailing list</a>, so that you are always kept up to date with any developments.-->
               </p>
               <div class="alert alert-warning" role="alert">
                 <strong>Note: </strong>in your settings, use only the agreed name (for example 'ntp.brandname.time.nl') and not the corresponding IP address, because we reserve the right to change that IP address in the future without notice.
@@ -351,7 +358,7 @@ system {<br>
               <span class="fas fa-chevron-down chevron"></span>
             </button>
             <div id="dnssec" class="accordion-panel">
-              <p class="mb-0">The domain name 'time.nl', under which we offer this service, is secured with <a href="https://www.sidn.nl/en/modern-internet-standards/dnssec">DNSSEC</a>. If your system supports DNSSEC, you can be confident that you will not be directed to the wrong IP address when connecting to 'ntp.time.nl'. It is worth noting that correct time is important for DNSSEC to function properly. In some situations, this creates a <a href="https://tools.ietf.org/html/draft-mglt-dnsop-dnssec-validator-requirements">chicken-and-egg problem</a>. For instance, when systems without an embedded Real Time Clock (RTC) boot up, they may have no sense of the time (they might think it is 1-1-1970), yet still attempt DNSSEC validation in order to resolve the IP address of 'ntp.time.nl' — which then fails. <a href="https://marc.info/?l=openbsd-tech&m=156102757301757&w=2">Solutions</a> for this have been devised, though it remains a point of attention. For systems that are already (roughly) synchronised, this is not an issue.</p>
+              <p class="mb-0">The domain name 'time.nl', under which we offer this service, is secured with <a href="https://www.sidn.nl/en/modern-internet-standards/dnssec">DNSSEC</a>. If your system supports DNSSEC, you can be confident that you will not be directed to the wrong IP address when connecting to 'ntppool.time.nl'. It is worth noting that correct time is important for DNSSEC to function properly. In some situations, this creates a <a href="https://tools.ietf.org/html/draft-mglt-dnsop-dnssec-validator-requirements">chicken-and-egg problem</a>. For instance, when systems without an embedded Real Time Clock (RTC) boot up, they may have no sense of the time (they might think it is 1-1-1970), yet still attempt DNSSEC validation in order to resolve the IP address of 'ntppool.time.nl' — which then fails. <a href="https://marc.info/?l=openbsd-tech&m=156102757301757&w=2">Solutions</a> for this have been devised, though it remains a point of attention. For systems that are already (roughly) synchronised, this is not an issue.</p>
             </div>
 
             <button class="btn-accordion" data-panel="authntp" data-group="group-faq">
